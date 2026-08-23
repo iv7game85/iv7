@@ -89,7 +89,8 @@ export interface BlogPost {
    GLOBAL URLS & NAVIGATION
 --------------------------------------------------------- */
 
-export const SITE_URL = "https://www.iv7-apps.in";
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.iv7-apps.in";
 
 export const SITE_CONFIG = {
   name: "IV7 Games",
