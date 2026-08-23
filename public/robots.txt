@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://www.iv7gameplay.com/sitemap.xml
-Host: https://www.iv7ameplay.com

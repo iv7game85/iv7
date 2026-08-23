@@ -1,4 +1,6 @@
 import { buildMetadata } from "../../config/seo";
+import { FAQ_DATA } from "../../config/constants";
+import { JsonLd, breadcrumbJsonLd } from "../components/structured-data";
 import FAQController from "./faq.controller";
 
 export const metadata = buildMetadata({
@@ -16,7 +18,31 @@ export const metadata = buildMetadata({
 });
 
 const FAQPage = () => {
-  return <FAQController />;
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ_DATA.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
+  return (
+    <>
+      <JsonLd data={faqStructuredData} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "FAQ", path: "/faq" },
+        ])}
+      />
+      <FAQController />
+    </>
+  );
 };
 
 export default FAQPage;

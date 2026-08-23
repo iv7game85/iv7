@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/next";
 
-import { SITE_URL } from "../config/constants";
+import { SITE_CONFIG } from "../config/constants";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
@@ -18,48 +19,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-
-  title: "IV7 Games – Official IV7 Game App & Download Guide",
-
-  description:
-    "Official guide for IV7 Game app. Download the latest IV7 APK, register, login, claim daily bonus rewards, and play color prediction & casino games securely.",
-
-  keywords: [
-    "IV7",
-    "IV7 Game",
-    "IV7 Games",
-    "IV7 APK",
-    "IV7 APK Download",
-    "IV7 App",
-    "IV7 Login",
-    "IV7 Register",
-    "IV7 Download",
-    "IV7 Official",
-    "IV7 Prediction Game",
-  ],
+  metadataBase: new URL(SITE_CONFIG.url),
+  title: {
+    default: SITE_CONFIG.title,
+    template: "%s | IV7 Games",
+  },
+  description: SITE_CONFIG.description,
+  keywords: [...SITE_CONFIG.keywords],
+  applicationName: SITE_CONFIG.name,
+  authors: [{ name: SITE_CONFIG.publisher }],
+  creator: SITE_CONFIG.publisher,
+  publisher: SITE_CONFIG.publisher,
+  category: "gaming",
 
   openGraph: {
-    title: "IV7 Games – Official IV7 Game App & Download Guide",
-    description:
-      "Official guide for IV7 Game app. Download the latest IV7 APK, register, login, claim daily bonus rewards, and play color prediction & casino games securely.",
-    url: SITE_URL + "/",
-    siteName: "IV7 Games",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+    url: SITE_CONFIG.url + "/",
+    siteName: SITE_CONFIG.name,
     type: "website",
     locale: "en_IN",
+    images: [{ url: SITE_CONFIG.ogImage, alt: "IV7 Games logo" }],
+  },
+
+  alternates: {
+    canonical: SITE_CONFIG.url + "/",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "IV7 Games – Official IV7 Game App & Download Guide",
-    description:
-      "Official guide for IV7 Game app. Download the latest IV7 APK, register, login, claim daily bonus rewards, and play color prediction & casino games securely.",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+    images: [SITE_CONFIG.ogImage],
   },
 
   robots: {
     index: true,
     follow: true,
   },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -74,6 +74,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );

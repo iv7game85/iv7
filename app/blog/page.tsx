@@ -1,4 +1,5 @@
 import { buildMetadata } from "../../config/seo";
+import { breadcrumbJsonLd, JsonLd } from "../components/structured-data";
 import BlogController from "./blog.controller";
 
 export const metadata = buildMetadata({
@@ -16,7 +17,17 @@ export const metadata = buildMetadata({
 });
 
 const BlogPage = () => {
-  return <BlogController />;
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+        ])}
+      />
+      <BlogController />
+    </>
+  );
 };
 
 export default BlogPage;

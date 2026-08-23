@@ -89,14 +89,33 @@ export interface BlogPost {
    GLOBAL URLS & NAVIGATION
 --------------------------------------------------------- */
 
-export const SITE_URL = "https://www.iv7gameplay.com";
+export const SITE_URL = "https://www.iv7-apps.in";
+
+export const SITE_CONFIG = {
+  name: "IV7 Games",
+  url: SITE_URL,
+  title: "IV7 Games - Official IV7 Game App & Download Guide",
+  description:
+    "Discover IV7 Games, download guides, game information, app features, FAQs, bonuses, and the latest IV7 gaming updates.",
+  keywords: [
+    "IV7",
+    "IV7 Game",
+    "IV7 APK",
+    "IV7 App",
+    "IV7 download guide",
+    "IV7 FAQ",
+  ],
+  language: "en-IN",
+  ogImage: "/iv7.png",
+  publisher: "IV7 Games",
+} as const;
 
 export const DOWNLOAD_LINKS = {
   DEFAULT_APK:
     "https://share-rxapq9cajg.iv7.info/web/share/index.html?ic=AD62TB6F&ts=1787479740&m=2&lang=en&id=1",
   TELEGRAM: "https://t.me/iv7gameofficial",
   WHATSAPP: "https://wa.me/919876543210",
-  EMAIL: "support@iv7gameplay.com",
+  EMAIL: "support@iv7-apps.in",
 } as const;
 
 export const NAV_LINKS: NavLink[] = [
@@ -109,10 +128,7 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const LEGAL_LINKS: NavLink[] = [
-  { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Disclaimer", href: "/disclaimer" },
-  { name: "Terms of Service", href: "/terms" },
-  { name: "Responsible Gaming", href: "/responsible-gaming" },
 ];
 
 /* ---------------------------------------------------------
@@ -283,7 +299,7 @@ export const FAQ_DATA: FAQItem[] = [
   {
     category: "Account & APK",
     q: "Why is IV7 not available on Google Play Store?",
-    a: "Google Play Store policies restrict real-money gaming apps in certain regions. You can safely download the official APK file directly from iv7gameplay.com.",
+    a: `Google Play Store policies restrict real-money gaming apps in certain regions. You can safely download the official APK file directly from ${SITE_CONFIG.url}.`,
   },
   {
     category: "Legality & Rules",
