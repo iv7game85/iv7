@@ -23,10 +23,10 @@ import {
   Trophy,
   Zap,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import iv7 from "../public/iv7.png";
+import Image from "next/image";
 
 export default function HomeController() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -67,68 +67,97 @@ export default function HomeController() {
       </div>
 
       {/* 2. HERO SECTION */}
-      <section className="relative mx-auto grid max-w-[1320px] grid-cols-1 items-center gap-8 px-6 pt-16 pb-14 lg:grid-cols-[1.1fr_0.9fr] lg:pt-24 lg:pb-20">
+      <section className="relative mx-auto grid max-w-[1320px] grid-cols-1 items-center gap-6 px-4 pt-12 pb-10 sm:px-6 sm:pt-16 sm:pb-14 lg:grid-cols-[1.1fr_0.9fr] lg:pt-24 lg:pb-20">
         <div className="pointer-events-none absolute right-10 top-1/2 h-[450px] w-[450px] -translate-y-1/2 animate-pulse rounded-full bg-[#f20d4d]/15 blur-[140px]" />
 
-        <div className="z-10 text-center lg:text-left">
-          <span className="inline-flex items-center gap-1.5 animate-bounce rounded-full border border-[#6c1731] bg-[#2b0b17] px-4 py-2 text-xs font-bold tracking-wide text-[#eee1e4]">
-            <Sparkles className="h-3.5 w-3.5 text-[#ffc629]" /> OFFICIAL RELEASE
-            2026
-          </span>
+        {/* Left Column (Main Content container) */}
+        <div className="z-10 flex flex-col text-center lg:text-left">
+          {/* Order 1: Badge & Scaled-Down Title */}
+          <div className="order-1">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#6c1731] bg-[#2b0b17] px-3 py-1 text-[11px] font-bold tracking-wide text-[#eee1e4] sm:px-4 sm:py-2 sm:text-xs">
+              <Sparkles className="h-3 w-3 text-[#ffc629] sm:h-3.5 sm:w-3.5" />{" "}
+              OFFICIAL RELEASE 2026
+            </span>
 
-          <h1 className="mt-6 font-['Impact',sans-serif] text-5xl font-black uppercase tracking-tight text-[#ffc629] sm:text-6xl lg:text-7xl leading-[1.05]">
-            IV7 GAME – <br />
-            <span className="text-white">DOWNLOAD THE LATEST OFFICIAL</span>
-          </h1>
+            <h1 className="mt-4 font-['Impact',sans-serif] text-3xl font-black uppercase tracking-tight text-[#ffc629] sm:text-5xl lg:text-7xl leading-[1.1]">
+              IV7 GAME
+            </h1>
+          </div>
 
-          <p className="mt-4 text-lg font-semibold text-[#ddd0d0]">
-            India&apos;s #1 Color Prediction, Casino, and Instant Cash Gaming
-            App.
-          </p>
+          {/* Order 2 on Mobile: Compact Image Mockup Card */}
+          <div className="order-2 my-6 flex justify-center items-center lg:hidden">
+            <div className="relative flex h-[220px] w-full max-w-[220px] items-center justify-center rounded-[24px] border border-[#50152c] bg-gradient-to-b from-[#19040c] to-[#070707] p-4 shadow-[0_0_35px_#e6004320]">
+              <Image
+                src="/iv7.png"
+                alt="IV7 App Graphic"
+                width={140}
+                height={140}
+                priority
+                unoptimized
+                className="relative z-10 h-36 w-36 object-contain drop-shadow-[0_15px_25px_#f20d4d40]"
+              />
+              <div className="absolute top-4 -right-2 animate-bounce rounded-lg border border-[#ffc629]/40 bg-[#1c1305]/95 px-2 py-1 text-[10px] font-bold text-[#ffc629] shadow-md backdrop-blur-md">
+                ⚡ ₹500 Bonus
+              </div>
+              <div className="absolute bottom-4 -left-2 animate-pulse rounded-lg border border-[#2bf57c]/40 bg-[#06180c]/95 px-2 py-1 text-[10px] font-bold text-[#2bf57c] shadow-md backdrop-blur-md">
+                ✓ 100% Fair Play
+              </div>
+            </div>
+          </div>
 
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-[#a59ca0] sm:text-base">
-            Join over 5,000,000+ active players on IV7. Play Win Go, Aviator,
-            Slots, and Teen Patti with instant 24/7 bank withdrawals and up to
-            ₹500 instant welcome registration bonus.
-          </p>
-
-          {/* CTA Download Button */}
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
+          {/* Order 3 on Mobile: Download CTA Button */}
+          <div className="order-3 mt-1 flex flex-col items-center gap-3 sm:flex-row lg:mt-8 lg:justify-start">
             <Link
               href={DOWNLOAD_LINKS.DEFAULT_APK}
               target="_blank"
               rel="noreferrer"
-              className="relative group overflow-hidden inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#fb154c] to-[#e90843] px-8 py-4 text-base font-extrabold text-white shadow-[0_10px_28px_#ee0d4540] transition-all duration-300 hover:scale-105 hover:shadow-[0_15px_35px_#ee0d4570] active:scale-95"
+              className="relative group overflow-hidden inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#fb154c] to-[#e90843] px-7 py-3 text-sm font-extrabold text-white shadow-[0_8px_20px_#ee0d4540] transition-all duration-300 hover:scale-105 active:scale-95 sm:px-8 sm:py-4 sm:text-base"
             >
               <span className="pointer-events-none absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-all duration-700 group-hover:left-[150%] group-hover:opacity-100" />
-              <Download className="h-5 w-5" />
+              <Download className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
               <span>Download Official APK</span>
             </Link>
           </div>
 
-          {/* Trust Badges */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5 lg:justify-start">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#383334] bg-[#171617] px-4 py-2 text-xs text-[#b6adaf] transition-colors hover:border-[#f20d4d]">
-              <ShieldCheck className="h-3.5 w-3.5 text-[#ffc629]" /> SSL
-              Encrypted
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#383334] bg-[#171617] px-4 py-2 text-xs text-[#b6adaf] transition-colors hover:border-[#f20d4d]">
-              <Zap className="h-3.5 w-3.5 text-[#ffc629]" /> Instant Payouts
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#383334] bg-[#171617] px-4 py-2 text-xs text-[#b6adaf] transition-colors hover:border-[#f20d4d]">
-              <span className="h-2 w-2 rounded-full bg-[#f20d4d]" /> 18+ Only
-            </span>
-          </div>
+          {/* Order 4 on Mobile: Subtitles & Extra Info */}
+          <div className="order-4 mt-6">
+            <p className="text-base font-semibold text-[#ddd0d0] sm:text-lg">
+              India&apos;s #1 Color Prediction, Casino, and Instant Cash Gaming
+              App.
+            </p>
 
-          <div className="mt-5 flex items-center justify-center gap-2 text-xs text-[#8e8789] lg:justify-start">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#2bf57c] shadow-[0_0_8px_#2bf57c] animate-ping" />
-            <span>25,480+ Players Online Now</span>
+            <p className="mt-2.5 max-w-xl text-xs leading-relaxed text-[#a59ca0] sm:mt-3 sm:text-base mx-auto lg:mx-0">
+              Join over 5,000,000+ active players on IV7. Play Win Go, Aviator,
+              Slots, and Teen Patti with instant 24/7 bank withdrawals and up to
+              ₹500 instant welcome registration bonus.
+            </p>
+
+            {/* Trust Badges */}
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:mt-8 sm:gap-2.5 lg:justify-start">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#383334] bg-[#171617] px-3.5 py-1.5 text-[11px] text-[#b6adaf] sm:px-4 sm:py-2 sm:text-xs">
+                <ShieldCheck className="h-3 w-3 text-[#ffc629] sm:h-3.5 sm:w-3.5" />{" "}
+                SSL Encrypted
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#383334] bg-[#171617] px-3.5 py-1.5 text-[11px] text-[#b6adaf] sm:px-4 sm:py-2 sm:text-xs">
+                <Zap className="h-3 w-3 text-[#ffc629] sm:h-3.5 sm:w-3.5" />{" "}
+                Instant Payouts
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#383334] bg-[#171617] px-3.5 py-1.5 text-[11px] text-[#b6adaf] sm:px-4 sm:py-2 sm:text-xs">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#f20d4d] sm:h-2 sm:w-2" />{" "}
+                18+ Only
+              </span>
+            </div>
+
+            <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-[#8e8789] sm:mt-5 sm:text-xs lg:justify-start">
+              <span className="h-2 w-2 rounded-full bg-[#2bf57c] shadow-[0_0_8px_#2bf57c] animate-ping" />
+              <span>25,480+ Players Online Now</span>
+            </div>
           </div>
         </div>
 
-        {/* Floating Mockup Card */}
-        <div className="relative flex justify-center items-center">
-          <div className="relative flex h-[400px] sm:h-[480px] w-full max-w-[420px] items-center justify-center rounded-[32px] border border-[#50152c] bg-gradient-to-b from-[#19040c] to-[#070707] p-6 shadow-[0_0_50px_#e6004325] transition-transform duration-500 hover:scale-105">
+        {/* Desktop-only Right Column Card */}
+        <div className="relative hidden lg:flex justify-center items-center">
+          <div className="relative flex h-[480px] w-full max-w-[420px] items-center justify-center rounded-[32px] border border-[#50152c] bg-gradient-to-b from-[#19040c] to-[#070707] p-6 shadow-[0_0_50px_#e6004325] transition-transform duration-500 hover:scale-105">
             <Image
               src={iv7}
               alt="IV7 App Graphic"
