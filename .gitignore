@@ -55,3 +55,11 @@ Thumbs.db
 *.pem
 *.key
 *.crt
+
+
+# local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
