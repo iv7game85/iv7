@@ -68,6 +68,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <Script
+        src="https://cdn.consentmanager.net/delivery/autoblocking/01164cec92c94.js"
+        strategy="beforeInteractive"
+        data-cmp-ab="1"
+        data-cmp-host="a.delivery.consentmanager.net"
+        data-cmp-cdn="cdn.consentmanager.net"
+        data-cmp-codesrc="16"
+      />
       <body className="min-h-screen bg-[#070707] text-[#f6f1e9] font-sans antialiased">
         <div className="flex min-h-screen flex-col justify-between">
           <Header />
