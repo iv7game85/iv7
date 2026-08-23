@@ -1,26 +1,362 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border: var(--border);
+  --font-sans: "Arial", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: dark;
+  --background: #070707;
+  --foreground: #f6f1e9;
+  --muted: #a59ca0;
+  --gold: #ffc629;
+  --red: #f20d4d;
+  --deep: #19040c;
+  --border: #3d1624;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Theme-Based Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090507;
+  border-left: 1px solid #1f0a12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f20d4d, #97092f);
+  border-radius: 9999px;
+  border: 2px solid #090507;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff2a63, #b80d3b);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f20d4d #090507;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Continuous Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  /* Changed from 35s to 65s for a slower, smoother scroll */
+  animation: marquee 65s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Fade-in Animation for Accordions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Header & Navigation */
+.site-header {
+  height: 84px;
+  padding: 0 2.5%;
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 5vw, 76px);
+  background: linear-gradient(100deg, #090909, #19040c);
+  border-bottom: 1px solid #2c101a;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: #faf7f4;
+  color: #ec0b3e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  box-shadow: 0 0 22px #ff154d42;
+  flex-shrink: 0;
+}
+
+.brand small {
+  color: #111;
+  font-size: 8px;
+  letter-spacing: -0.5px;
+  margin-top: 7px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3.3vw, 45px);
+  flex: 1;
+}
+
+.nav a {
+  color: #bdb5b7;
+  font-size: 14px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--gold);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(100deg, #fb154c, #e90843);
+  border: 0;
+  border-radius: 40px;
+  color: #fff;
+  padding: 17px 28px;
+  font-weight: 800;
+  box-shadow: 0 10px 28px #ee0d4535;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 15px 32px #ee0d4560;
+}
+
+.button-small {
+  padding: 14px 25px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Typography & Global Elements */
+h1,
+h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.02;
+}
+
+h1 {
+  font-size: clamp(56px, 6.3vw, 94px);
+  margin: 30px 0 18px;
+}
+
+h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  margin: 20px 0;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.lead {
+  color: #ddd0d0;
+  font-size: 19px;
+  margin: 0 0 24px;
+}
+
+.outline-button {
+  display: inline-block;
+  border: 1px solid var(--red);
+  color: #ff3b68;
+  border-radius: 30px;
+  padding: 11px 22px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: all 0.2s ease;
+}
+
+.outline-button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(255, 198, 41, 0.1);
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 70px 20px 35px;
+  border-top: 1px solid #4b1729;
+  background: #0d0d0d;
+}
+
+footer .brand {
+  margin: auto;
+}
+
+footer p {
+  font-size: 13px;
+  margin: 25px 0;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  color: #aaa;
+  font-size: 12px;
+  margin-bottom: 35px;
+}
+
+footer > small {
+  color: #777;
+  font-size: 11px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 800px) {
+  .site-header {
+    height: 70px;
+    padding: 0 18px;
+    gap: 14px;
+  }
+
+  .brand {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 18px;
+  }
+
+  .brand small {
+    font-size: 6px;
+    margin-top: 5px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #11070b;
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 1px solid #51152d;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .button-small {
+    padding: 11px 13px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header > .button-small {
+    display: none;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
 }
