@@ -1,6 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -11,21 +10,17 @@ import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export const viewport: Viewport = {
+  themeColor: "#070707",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: {
     default: SITE_CONFIG.title,
-    template: "%s | IV7 Games",
+    template: `%s | ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
   keywords: [...SITE_CONFIG.keywords],
@@ -35,18 +30,25 @@ export const metadata: Metadata = {
   publisher: SITE_CONFIG.publisher,
   category: "gaming",
 
+  alternates: {
+    canonical: "/",
+  },
+
   openGraph: {
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
-    url: SITE_CONFIG.url + "/",
+    url: "/",
     siteName: SITE_CONFIG.name,
     type: "website",
     locale: "en_IN",
-    images: [{ url: SITE_CONFIG.ogImage, alt: "IV7 Games logo" }],
-  },
-
-  alternates: {
-    canonical: SITE_CONFIG.url + "/",
+    images: [
+      {
+        url: SITE_CONFIG.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_CONFIG.name} Banner`,
+      },
+    ],
   },
 
   twitter: {
@@ -59,31 +61,42 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <Script
-        src="https://cdn.consentmanager.net/delivery/autoblocking/01164cec92c94.js"
-        strategy="beforeInteractive"
-        data-cmp-ab="1"
-        data-cmp-host="a.delivery.consentmanager.net"
-        data-cmp-cdn="cdn.consentmanager.net"
-        data-cmp-codesrc="16"
-      />
+    <html lang="en" className="h-full antialiased">
+      <head>
+        {/* Cookie / CMP Consent Manager */}
+        <Script
+          src="https://cdn.consentmanager.net/delivery/autoblocking/01164cec92c94.js"
+          strategy="beforeInteractive"
+          data-cmp-ab="1"
+          data-cmp-host="a.delivery.consentmanager.net"
+          data-cmp-cdn="cdn.consentmanager.net"
+          data-cmp-codesrc="16"
+        />
+      </head>
       <body className="min-h-screen bg-[#070707] text-[#f6f1e9] font-sans antialiased">
         <div className="flex min-h-screen flex-col justify-between">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+
+        {/* Vercel Web Analytics */}
         <Analytics />
-        {GA_ID ? (
+
+        {/* Google Analytics 4 */}
+        {GA_ID && (
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -92,13 +105,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <Script id="google-analytics" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
-                function gtag(){window.dataLayer.push(arguments);}
+                function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${GA_ID}');
+                gtag('config', '${GA_ID}', {
+                  page_path: window.location.pathname,
+                });
               `}
             </Script>
           </>
-        ) : null}
+        )}
       </body>
     </html>
   );

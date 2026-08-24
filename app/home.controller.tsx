@@ -1,598 +1,537 @@
-"use client";
-
-import {
-  APP_DETAILS,
-  APP_FEATURES,
-  BLOG_POSTS,
-  DOWNLOAD_LINKS,
-  FAQ_CATEGORIES,
-  FAQ_DATA,
-  LATEST_WINNERS,
-  PLATFORM_STATS,
-  REWARDS_DATA,
-} from "@/config/constants";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Download,
-  Minus,
-  Plus,
-  ShieldCheck,
-  Smartphone,
-  Sparkles,
-  Trophy,
-  Zap,
-} from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
-import iv7 from "../public/iv7.png";
 import Image from "next/image";
+import { Download, ExternalLink } from "lucide-react";
+
+import { DOWNLOAD_LINKS, FAQ_DATA } from "@/config/constants";
+
+const gameCategories = [
+  [
+    "Card Games",
+    "Card-based games are popular among mobile gaming users because they are familiar and easy to understand. Depending on availability, IV7 may provide games based on traditional card formats and other digital variations.",
+  ],
+  [
+    "Teen Patti",
+    "Teen Patti is a well-known card game with a strong following among Indian players. Digital versions allow users to experience the familiar card format through a mobile interface.",
+  ],
+  [
+    "Dragon Tiger",
+    "Dragon Tiger is another card-based game that may be available on gaming platforms such as IV7. Users should understand the rules of each game before participating.",
+  ],
+  [
+    "Slots and Casual Games",
+    "Some versions or sections of the platform may include slot-style and casual games designed for short gaming sessions.",
+  ],
+  [
+    "Prediction-Style Games",
+    "Prediction-based games may also be available depending on the current platform and region. These games can involve chance, so users should understand the rules and risks before participating.",
+  ],
+];
+
+const downloadSteps = [
+  [
+    "Visit the Official Source",
+    "Start by visiting the legitimate IV7 website or authorized download page. Check the application name, version information, and source before downloading.",
+  ],
+  [
+    "Download the APK",
+    "Select the appropriate Android download option and allow the file to finish downloading. Make sure your phone has sufficient storage and a stable internet connection.",
+  ],
+  [
+    "Find the Downloaded File",
+    "Open the Files or Downloads application on your Android device and locate the APK.",
+  ],
+  [
+    "Check Android Security Settings",
+    "Android may restrict installations from sources outside Google Play. Only continue after verifying that the APK is legitimate.",
+  ],
+  [
+    "Install IV7",
+    "Open the APK and follow the installation instructions displayed on your screen. Review the requested permissions before completing the installation.",
+  ],
+  [
+    "Open the Application",
+    "After installation, open IV7 and follow the platform's current login or registration instructions.",
+  ],
+];
+
+const registerSteps = [
+  "Open the IV7 platform or application.",
+  "Select the Register or Sign Up option.",
+  "Enter the requested mobile number or account details.",
+  "Complete the verification process if required.",
+  "Create a strong password.",
+  "Review the platform's terms and conditions.",
+  "Complete registration and log in.",
+];
+
+const featureDetails = [
+  [
+    "Multiple Gaming Options",
+    "Different categories in one platform allow users to explore various games without needing separate applications for every type.",
+  ],
+  [
+    "Mobile-Friendly Design",
+    "IV7 is designed around smartphone access, making it convenient for users who prefer gaming on Android devices.",
+  ],
+  [
+    "Simple Navigation",
+    "A clear interface can make it easier to find games, account settings, registration options, and other sections.",
+  ],
+  [
+    "Account Management",
+    "Registered users can access account-related features through their login details.",
+  ],
+  [
+    "Regular Updates",
+    "Application updates can improve compatibility, fix technical issues, and introduce changes to available features.",
+  ],
+];
 
 export default function HomeController() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [faqCategory, setFaqCategory] = useState<string>("All");
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
-
-  const filteredFaqs =
-    faqCategory === "All"
-      ? FAQ_DATA
-      : FAQ_DATA.filter((f) => f.category === faqCategory);
-
   return (
-    <div className="min-h-screen bg-[#070707] text-[#f6f1e9] selection:bg-[#f20d4d] selection:text-white">
-      {/* 1. TOP LIVE TICKER */}
-      <div className="flex h-10 w-full items-center overflow-hidden whitespace-nowrap bg-[#97092f] text-[12px] text-[#e5cbd0]">
-        <div className="z-20 flex h-full shrink-0 items-center gap-1.5 bg-[#ed174c] px-5 text-[11px] font-extrabold tracking-wider text-white uppercase shadow-[4px_0_12px_rgba(0,0,0,0.3)]">
-          <span className="inline-block h-2 w-2 animate-ping rounded-full bg-white" />
-          <span>LIVE</span>
-        </div>
-
-        <div className="flex w-full overflow-hidden select-none">
-          <div className="animate-marquee flex items-center gap-6 pl-4">
-            {[...LATEST_WINNERS, ...LATEST_WINNERS].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-6">
-                <span>
-                  {item.name} won{" "}
-                  <strong className="text-[#ffc629]">{item.amount}</strong> on{" "}
-                  {item.game}!
-                </span>
-                <span>•</span>
-              </div>
-            ))}
+    <article className="min-h-screen bg-[#08090b] text-[#f4f1ea]">
+      <header className="border-b border-[#26313b] bg-[radial-gradient(circle_at_top_right,#203743,transparent_45%),linear-gradient(135deg,#0b1117,#08090b)] px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
+        <div className="mx-auto max-w-5xl">
+          <p className="mb-5 text-sm font-bold uppercase tracking-[0.22em] text-[#e6b84e]">
+            IV7 Games Guide
+          </p>
+          <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
+            IV7 Game – Explore IV7 Games, Download &amp; Register
+          </h1>
+          <p className="mt-7 max-w-3xl text-lg leading-8 text-[#b8c2c9]">
+            Explore IV7 Games, learn about the IV7 Games Download process, and
+            find clear information about IV7 Game Register, Android access,
+            account security, and responsible gaming.
+          </p>
+          <div className="mt-8 flex justify-center lg:justify-start">
+            <Image
+              src="/iv7.png"
+              alt="IV7 Game app graphic"
+              width={140}
+              height={140}
+              priority
+              unoptimized
+              className="h-36 w-36 object-contain"
+            />
           </div>
-        </div>
-      </div>
-
-      {/* 2. HERO SECTION */}
-      <section className="relative mx-auto grid max-w-[1320px] grid-cols-1 items-center gap-6 px-4 pt-12 pb-10 sm:px-6 sm:pt-16 sm:pb-14 lg:grid-cols-[1.1fr_0.9fr] lg:pt-24 lg:pb-20">
-        <div className="pointer-events-none absolute right-10 top-1/2 h-[450px] w-[450px] -translate-y-1/2 animate-pulse rounded-full bg-[#f20d4d]/15 blur-[140px]" />
-
-        {/* Left Column (Main Content container) */}
-        <div className="z-10 flex flex-col text-center lg:text-left">
-          {/* Order 1: Badge & Scaled-Down Title */}
-          <div className="order-1">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#6c1731] bg-[#2b0b17] px-3 py-1 text-[11px] font-bold tracking-wide text-[#eee1e4] sm:px-4 sm:py-2 sm:text-xs">
-              <Sparkles className="h-3 w-3 text-[#ffc629] sm:h-3.5 sm:w-3.5" />{" "}
-              OFFICIAL RELEASE 2026
-            </span>
-
-            <h1 className="mt-4 font-['Impact',sans-serif] text-3xl font-black uppercase tracking-tight text-[#ffc629] sm:text-5xl lg:text-7xl leading-[1.1]">
-              IV7 GAME
-            </h1>
-          </div>
-
-          {/* Order 2 on Mobile: Compact Image Mockup Card */}
-          <div className="order-2 my-6 flex justify-center items-center lg:hidden">
-            <div className="relative flex h-[220px] w-full max-w-[220px] items-center justify-center rounded-[24px] border border-[#50152c] bg-gradient-to-b from-[#19040c] to-[#070707] p-4 shadow-[0_0_35px_#e6004320]">
-              <Image
-                src="/iv7.png"
-                alt="IV7 App Graphic"
-                width={140}
-                height={140}
-                priority
-                unoptimized
-                className="relative z-10 h-36 w-36 object-contain drop-shadow-[0_15px_25px_#f20d4d40]"
-              />
-              <div className="absolute top-4 -right-2 animate-bounce rounded-lg border border-[#ffc629]/40 bg-[#1c1305]/95 px-2 py-1 text-[10px] font-bold text-[#ffc629] shadow-md backdrop-blur-md">
-                ⚡ ₹500 Bonus
-              </div>
-              <div className="absolute bottom-4 -left-2 animate-pulse rounded-lg border border-[#2bf57c]/40 bg-[#06180c]/95 px-2 py-1 text-[10px] font-bold text-[#2bf57c] shadow-md backdrop-blur-md">
-                ✓ 100% Fair Play
-              </div>
-            </div>
-          </div>
-
-          {/* Order 3 on Mobile: Download CTA Button */}
-          <div className="order-3 mt-1 flex flex-col items-center gap-3 sm:flex-row lg:mt-8 lg:justify-start">
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href={DOWNLOAD_LINKS.DEFAULT_APK}
               target="_blank"
               rel="noreferrer"
-              className="relative group overflow-hidden inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#fb154c] to-[#e90843] px-7 py-3 text-sm font-extrabold text-white shadow-[0_8px_20px_#ee0d4540] transition-all duration-300 hover:scale-105 active:scale-95 sm:px-8 sm:py-4 sm:text-base"
+              className="inline-flex items-center gap-2 rounded-md bg-[#e6b84e] px-5 py-3 font-bold text-[#17130a] transition hover:bg-[#f4cc70]"
             >
-              <span className="pointer-events-none absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-all duration-700 group-hover:left-[150%] group-hover:opacity-100" />
-              <Download className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
-              <span>Download Official APK</span>
+              <Download className="h-4 w-4" />
+              Official source
             </Link>
-          </div>
-
-          {/* Order 4 on Mobile: Subtitles & Extra Info */}
-          <div className="order-4 mt-6">
-            <p className="text-base font-semibold text-[#ddd0d0] sm:text-lg">
-              India&apos;s #1 Color Prediction, Casino, and Instant Cash Gaming
-              App.
-            </p>
-
-            <p className="mt-2.5 max-w-xl text-xs leading-relaxed text-[#a59ca0] sm:mt-3 sm:text-base mx-auto lg:mx-0">
-              Join over 5,000,000+ active players on IV7. Play Win Go, Aviator,
-              Slots, and Teen Patti with instant 24/7 bank withdrawals and up to
-              ₹500 instant welcome registration bonus.
-            </p>
-
-            {/* Trust Badges */}
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:mt-8 sm:gap-2.5 lg:justify-start">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#383334] bg-[#171617] px-3.5 py-1.5 text-[11px] text-[#b6adaf] sm:px-4 sm:py-2 sm:text-xs">
-                <ShieldCheck className="h-3 w-3 text-[#ffc629] sm:h-3.5 sm:w-3.5" />{" "}
-                SSL Encrypted
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#383334] bg-[#171617] px-3.5 py-1.5 text-[11px] text-[#b6adaf] sm:px-4 sm:py-2 sm:text-xs">
-                <Zap className="h-3 w-3 text-[#ffc629] sm:h-3.5 sm:w-3.5" />{" "}
-                Instant Payouts
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#383334] bg-[#171617] px-3.5 py-1.5 text-[11px] text-[#b6adaf] sm:px-4 sm:py-2 sm:text-xs">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#f20d4d] sm:h-2 sm:w-2" />{" "}
-                18+ Only
-              </span>
-            </div>
-
-            <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-[#8e8789] sm:mt-5 sm:text-xs lg:justify-start">
-              <span className="h-2 w-2 rounded-full bg-[#2bf57c] shadow-[0_0_8px_#2bf57c] animate-ping" />
-              <span>25,480+ Players Online Now</span>
-            </div>
+            <a
+              href="#download"
+              className="inline-flex items-center gap-2 rounded-md border border-[#52616c] px-5 py-3 font-bold text-[#f4f1ea] transition hover:border-[#e6b84e]"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Read the download guide
+            </a>
           </div>
         </div>
+      </header>
 
-        {/* Desktop-only Right Column Card */}
-        <div className="relative hidden lg:flex justify-center items-center">
-          <div className="relative flex h-[480px] w-full max-w-[420px] items-center justify-center rounded-[32px] border border-[#50152c] bg-gradient-to-b from-[#19040c] to-[#070707] p-6 shadow-[0_0_50px_#e6004325] transition-transform duration-500 hover:scale-105">
-            <Image
-              src={iv7}
-              alt="IV7 App Graphic"
-              width={260}
-              height={260}
-              priority
-              className="object-contain drop-shadow-[0_20px_40px_#f20d4d40] transition-transform duration-500 hover:rotate-2"
-            />
-            <div className="absolute top-8 right-4 animate-bounce rounded-xl border border-[#ffc629]/40 bg-[#1c1305]/90 px-3 py-1.5 text-xs font-bold text-[#ffc629] shadow-lg backdrop-blur-md">
-              ⚡ ₹500 Bonus
-            </div>
-            <div className="absolute bottom-8 left-4 animate-pulse rounded-xl border border-[#2bf57c]/40 bg-[#06180c]/90 px-3 py-1.5 text-xs font-bold text-[#2bf57c] shadow-lg backdrop-blur-md">
-              ✓ 100% Fair Play
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. MOBILE GAME OVERVIEW */}
-      <section id="overview" className="border-t border-[#1b1215] px-6 py-20">
-        <div className="mx-auto max-w-[1320px]">
-          <div className="text-center">
-            <span className="rounded-full border border-[#6c1731] bg-[#2b0b17] px-4 py-1.5 text-xs font-bold text-[#ffc629]">
-              FEATURES
-            </span>
-            <h2 className="mt-3 font-['Impact',sans-serif] text-4xl uppercase tracking-wide text-white sm:text-5xl">
-              IV7 MOBILE GAME OVERVIEW
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#a59ca0]">
-              Engineered with modern WebGL and RNG-certified algorithms, IV7
-              guarantees ultra-responsive gameplay, lightning-fast round
-              results, and complete transaction transparency.
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {APP_FEATURES.map((feature) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={feature.title}
-                  className="group rounded-3xl border border-[#2c2c2c] bg-[#121212] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[#f20d4d]/60 hover:shadow-[0_10px_30px_#f20d4d20]"
-                >
-                  <div className="inline-flex rounded-2xl bg-[#2b0b17] p-3 text-[#ffc629] transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <h3 className="mt-4 font-['Impact',sans-serif] text-xl tracking-wider text-white uppercase transition-colors group-hover:text-[#ffc629]">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[#a59ca0]">
-                    {feature.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. APP SPECIFICATIONS TABLE */}
-      <section className="border-t border-[#1b1215] px-6 py-20">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="rounded-full border border-[#6c1731] bg-[#2b0b17] px-4 py-1.5 text-xs font-bold text-[#ffc629]">
-            DETAILS
-          </span>
-          <h2 className="mt-3 font-['Impact',sans-serif] text-4xl uppercase tracking-wide text-white sm:text-5xl">
-            IV7 APP DETAILS
+      <div className="mx-auto max-w-5xl px-6 py-14 sm:px-10 lg:px-16">
+        <section aria-labelledby="welcome">
+          <h2 id="welcome" className="text-3xl font-bold sm:text-4xl">
+            Welcome to IV7 Game
           </h2>
+          <p className="mt-5">
+            Welcome to the IV7 Game platform, a mobile-focused destination where
+            users can explore a variety of games through a simple and convenient
+            interface. Whether you are looking for information about IV7 Games,
+            want to learn about the IV7 Games Download process, or need help
+            with IV7 Game Register, this website provides the essential
+            information you need to get started.
+          </p>
+          <p className="mt-4">
+            IV7 is designed for users who prefer accessing different gaming
+            options from one platform rather than switching between multiple
+            applications. Depending on the current version and availability,
+            users may find different categories of games, including card games,
+            casual games, prediction-style games, and other entertainment
+            options.
+          </p>
+          <p className="mt-4">
+            If you are new to IV7, this homepage gives you an overview of the
+            platform, its features, download process, registration steps, and
+            important information to consider before using the service.
+          </p>
+        </section>
 
-          <div className="mt-10 overflow-hidden rounded-3xl border border-[#2c2c2c] bg-[#121212] text-left shadow-2xl">
-            {APP_DETAILS.map((spec, i) => (
-              <div
-                key={spec.label}
-                className={`flex items-center justify-between px-6 py-4.5 text-sm transition-colors hover:bg-white/5 ${
-                  i < APP_DETAILS.length - 1 ? "border-b border-[#222]" : ""
-                }`}
-              >
-                <span className="font-semibold text-[#888]">{spec.label}</span>
-                <span className="font-bold text-white text-right">
-                  {spec.value}
-                </span>
+        <section
+          aria-labelledby="what-is-iv7"
+          className="mt-16 border-t border-[#26313b] pt-12"
+        >
+          <h2 id="what-is-iv7" className="text-3xl font-bold sm:text-4xl">
+            What Is IV7 Game?
+          </h2>
+          <p className="mt-5">
+            IV7 Game is presented as a mobile gaming platform that brings
+            different gaming experiences together in one place. The platform is
+            primarily focused on convenient smartphone access, making it easy
+            for users to browse available games and manage their accounts from a
+            mobile device.
+          </p>
+          <p className="mt-4">
+            The exact selection of games and platform features can change as new
+            versions are introduced. Users should always check the current
+            version and information available through the legitimate IV7
+            platform before downloading or registering.
+          </p>
+          <p className="mt-4">
+            One advantage of a multi-game platform is convenience. Instead of
+            searching for separate applications for different games, users can
+            access multiple options through one interface.
+          </p>
+          <p className="mt-4">
+            For Android users, IV7 may be distributed through an APK
+            installation process. Anyone downloading an APK should verify the
+            source carefully and avoid modified or suspicious files.
+          </p>
+        </section>
+
+        <section
+          aria-labelledby="games"
+          className="mt-16 border-t border-[#26313b] pt-12"
+        >
+          <h2 id="games" className="text-3xl font-bold sm:text-4xl">
+            Explore IV7 Games
+          </h2>
+          <p className="mt-5">
+            The IV7 Games section is designed around providing different types
+            of gaming experiences through one platform. Depending on the current
+            version, users may encounter several categories of games.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {gameCategories.map(([title, text]) => (
+              <div key={title} className="border-l-2 border-[#e6b84e] pl-5">
+                <h3 className="text-xl font-semibold text-[#f4d27d]">
+                  {title}
+                </h3>
+                <p className="mt-2">{text}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+          <p className="mt-7">
+            The available game library can change, so the current platform
+            should always be treated as the most accurate source for available
+            games.
+          </p>
+        </section>
 
-      {/* 5. STATS BAR */}
-      <section className="px-6 py-8">
-        <div className="mx-auto grid max-w-[1260px] grid-cols-2 overflow-hidden rounded-3xl border border-[#5d1b2e] bg-[#10090b] sm:grid-cols-3 lg:grid-cols-5">
-          {PLATFORM_STATS.map((stat, idx) => (
-            <div
-              key={stat.label}
-              className={`p-6 text-center transition-colors hover:bg-white/5 ${
-                idx !== PLATFORM_STATS.length - 1
-                  ? "border-b sm:border-b-0 border-r border-[#3b1824]"
-                  : ""
-              }`}
-            >
-              <strong className="block font-['Impact',sans-serif] text-3xl text-[#ffc629] sm:text-4xl">
-                {stat.value}
-              </strong>
-              <small className="text-[10px] tracking-widest text-[#8e8588] uppercase">
-                {stat.label}
-              </small>
+        <section
+          id="download"
+          aria-labelledby="download-heading"
+          className="mt-16 border-t border-[#26313b] pt-12"
+        >
+          <h2 id="download-heading" className="text-3xl font-bold sm:text-4xl">
+            IV7 Games Download
+          </h2>
+          <p className="mt-5">
+            Searching for IV7 Games Download usually means you want to access
+            the IV7 application on an Android smartphone.
+          </p>
+          <p className="mt-4">
+            Before downloading an APK, always verify that you are using a
+            legitimate source. APK files obtained from unknown websites can
+            potentially be modified or unsafe.
+          </p>
+          <p className="mt-5 border-l-2 border-[#e6b84e] bg-[#11181d] p-4 font-semibold text-[#f4d27d]">
+            Only download APK files from a legitimate and verified source. Avoid
+            modified, cracked, or suspicious APK files.
+          </p>
+          <h3 className="mt-10 text-2xl font-semibold text-[#f4d27d]">
+            General Android Installation Process
+          </h3>
+          <div className="mt-6 space-y-5">
+            {downloadSteps.map(([title, text], index) => (
+              <div
+                key={title}
+                className="rounded-md border border-[#26313b] bg-[#0d1318] p-5"
+              >
+                <h4 className="text-lg font-bold">
+                  <span className="mr-2 text-[#e6b84e]">Step {index + 1}:</span>
+                  {title}
+                </h4>
+                <p className="mt-2">{text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section
+          aria-labelledby="register"
+          className="mt-16 border-t border-[#26313b] pt-12"
+        >
+          <h2 id="register" className="text-3xl font-bold sm:text-4xl">
+            IV7 Game Register
+          </h2>
+          <p className="mt-5">
+            After accessing the platform, new users may need to complete the IV7
+            Game Register process before using account-based features.
+          </p>
+          <p className="mt-4">
+            The registration process can vary depending on the current version,
+            but it generally involves creating an account with basic information
+            and completing any required verification.
+          </p>
+          <h3 className="mt-10 text-2xl font-semibold text-[#f4d27d]">
+            Typical Registration Steps
+          </h3>
+          <ol className="mt-5 list-decimal space-y-3 pl-6 text-[#c3cbd0]">
+            {registerSteps.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+          <h5 className="mt-8 text-lg font-bold text-[#f4d27d]">
+            Account security reminder
+          </h5>
+          <p className="mt-2">
+            Keep your account information private. Never share your password,
+            OTP, PIN, or other security credentials with another person.
+          </p>
+        </section>
+
+        <section
+          aria-labelledby="features"
+          className="mt-16 border-t border-[#26313b] pt-12"
+        >
+          <h2 id="features" className="text-3xl font-bold sm:text-4xl">
+            Why Choose a Mobile Gaming Platform?
+          </h2>
+          <p className="mt-5">
+            Mobile gaming has become increasingly convenient because users can
+            access entertainment directly from their smartphones.
+          </p>
+          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+            {[
+              "A mobile-friendly interface",
+              "Multiple game categories in one place",
+              "Quick access to available games",
+              "Simple account navigation",
+              "Convenient smartphone access",
+              "A straightforward registration process",
+            ].map((item) => (
+              <li
+                key={item}
+                className="border border-[#26313b] bg-[#0d1318] p-4 text-[#c3cbd0]"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6">
+            The actual features available can depend on the current version,
+            device, region, and platform policies.
+          </p>
+          <h3 className="mt-12 text-2xl font-semibold text-[#f4d27d]">
+            IV7 Game Features
+          </h3>
+          <p className="mt-4">
+            The IV7 platform focuses on providing a straightforward experience
+            for mobile users. Features can change over time, but users may find
+            several useful functions.
+          </p>
+          <div className="mt-6 space-y-5">
+            {featureDetails.map(([title, text]) => (
+              <div key={title}>
+                <h4 className="text-lg font-bold text-[#f4d27d]">{title}</h4>
+                <p className="mt-1">{text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section
+          aria-labelledby="android"
+          className="mt-16 border-t border-[#26313b] pt-12"
+        >
+          <h2 id="android" className="text-3xl font-bold sm:text-4xl">
+            IV7 on Android
+          </h2>
+          <p className="mt-5">
+            Android users are often interested in IV7 Games Download because APK
+            installation provides another way to access an application outside a
+            conventional app-store listing.
+          </p>
+          <p className="mt-4">
+            Before installing an APK, check the Android requirements listed with
+            the current version. Compatibility can depend on your
+            operating-system version, device hardware, available storage, and
+            the APK release.
+          </p>
+          <p className="mt-4">
+            If installation fails, do not repeatedly download files from random
+            websites. First verify the source, file integrity, storage space,
+            and Android compatibility.
+          </p>
+          <h3 className="mt-10 text-2xl font-semibold text-[#f4d27d]">
+            IV7 Game Login
+          </h3>
+          <p className="mt-4">
+            Existing users can use the platform&apos;s login option to access
+            their account. Always use the official login page or application,
+            and avoid entering credentials into websites or forms that you do
+            not recognize.
+          </p>
+          <p className="mt-4">
+            For better account security, use a strong and unique password and
+            keep verification information private. If you forget your password,
+            use the official account-recovery procedure provided by the
+            platform.
+          </p>
+        </section>
+
+        <section
+          aria-labelledby="safety"
+          className="mt-16 border-t border-[#26313b] pt-12"
+        >
+          <h2 id="safety" className="text-3xl font-bold sm:text-4xl">
+            Safety Tips Before IV7 Games Download
+          </h2>
+          {[
+            [
+              "Download From a Reliable Source",
+              "Avoid websites that provide modified, cracked, or suspicious versions.",
+            ],
+            [
+              "Check App Permissions",
+              "Review the permissions requested by the application. If something appears unrelated to the application's purpose, investigate before continuing.",
+            ],
+            [
+              "Keep Your Phone Updated",
+              "Install Android security updates and keep your device's built-in security protections enabled.",
+            ],
+            [
+              "Avoid Modified APKs",
+              "Modified applications may contain altered code or unwanted software. They can also create account and privacy risks.",
+            ],
+            [
+              "Protect Your Personal Information",
+              "Never share passwords, OTPs, banking PINs, or other sensitive information with unknown individuals.",
+            ],
+          ].map(([title, text]) => (
+            <div key={title}>
+              <h3 className="mt-8 text-xl font-semibold text-[#f4d27d]">
+                {title}
+              </h3>
+              <p className="mt-2">{text}</p>
             </div>
           ))}
-        </div>
-      </section>
+        </section>
 
-      {/* 6. BONUSES & REWARDS */}
-      <section
-        id="rewards"
-        className="relative overflow-hidden border-t border-[#1b1215] px-6 py-20"
-      >
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[450px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f20d4d]/10 blur-[150px]" />
-
-        <div className="relative mx-auto max-w-[1320px]">
-          <div className="text-center">
-            <span className="inline-block animate-pulse rounded-full border border-[#6c1731] bg-[#2b0b17] px-4 py-1.5 text-xs font-bold text-[#ffc629]">
-              🔥 EXCLUSIVE OFFERS
-            </span>
-            <h2 className="mt-3 font-['Impact',sans-serif] text-4xl uppercase tracking-wide text-white sm:text-5xl">
-              BONUSES & REWARDS
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[#a59ca0]">
-              Claim maximum value with everyday cashbacks, referral commissions,
-              and new-user spin wheels.
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {REWARDS_DATA.map((reward) => {
-              const Icon = reward.icon;
-              return (
-                <div
-                  key={reward.title}
-                  className={`group relative overflow-hidden rounded-3xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-                    reward.highlight
-                      ? "border border-[#ffc629] bg-[#261d0d] shadow-[0_0_25px_#ffc62920] hover:border-[#ffe17d] hover:shadow-[0_0_35px_#ffc62950]"
-                      : "border border-[#54152b] bg-[#17070d] hover:border-[#f20d4d] hover:shadow-[0_0_30px_#f20d4d35]"
-                  }`}
-                >
-                  <span className="pointer-events-none absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition-all duration-700 group-hover:left-[150%] group-hover:opacity-100" />
-                  <div className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-gradient-to-br from-[#f20d4d]/30 to-[#ffc629]/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                  <div className="relative inline-flex items-center justify-center rounded-2xl bg-white/5 p-4 text-[#ffc629] transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6">
-                    <Icon className="h-8 w-8" />
-                  </div>
-
-                  <strong
-                    className={`mt-3 block font-['Impact',sans-serif] text-4xl tracking-tight transition-colors duration-300 ${
-                      reward.highlight
-                        ? "text-[#ffc629] group-hover:text-yellow-300"
-                        : "text-[#ffc629] group-hover:text-white"
-                    }`}
-                  >
-                    {reward.amount}
-                  </strong>
-
-                  <h3 className="mt-2 text-base font-bold uppercase tracking-wide text-white transition-colors group-hover:text-[#ffc629]">
-                    {reward.title}
-                  </h3>
-
-                  <p className="mt-2 text-xs leading-relaxed text-[#a59ca0] transition-colors group-hover:text-[#d5ccd0]">
-                    {reward.description}
-                  </p>
-
-                  <div className="mt-6 flex justify-center">
-                    {reward.highlight ? (
-                      <Link
-                        href={DOWNLOAD_LINKS.DEFAULT_APK}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#fb154c] to-[#e90843] px-7 py-2.5 text-xs font-extrabold text-white shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 group-hover:shadow-[0_0_20px_#f20d4d70]"
-                      >
-                        <span>{reward.badge}</span>
-                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                      </Link>
-                    ) : (
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#f20d4d] px-5 py-1.5 text-xs font-bold text-[#ff3b68] transition-all duration-300 group-hover:border-[#ffc629] group-hover:bg-[#ffc629]/10 group-hover:text-[#ffc629]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#ff3b68] transition-colors group-hover:bg-[#ffc629]" />
-                        {reward.badge}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. RECENT WINNERS */}
-      <section className="border-t border-[#1b1215] px-4 sm:px-6 py-20 overflow-hidden">
-        <div className="mx-auto max-w-[1320px] text-center">
-          <span className="inline-block animate-pulse rounded-full border border-[#6c1731] bg-[#2b0b17] px-4 py-1.5 text-xs font-bold text-[#ffc629]">
-            HALL OF FAME
-          </span>
-          <h2 className="mt-3 font-['Impact',sans-serif] text-4xl uppercase tracking-wide text-white sm:text-5xl">
-            LATEST WINNERS
+        <section
+          aria-labelledby="responsible"
+          className="mt-16 border-t border-[#26313b] pt-12"
+        >
+          <h2 id="responsible" className="text-3xl font-bold sm:text-4xl">
+            Responsible Gaming
           </h2>
-          <p className="mx-auto mt-2 max-w-md text-xs sm:text-sm text-[#a59ca0]">
-            Real-time verified payouts across Win Go, Aviator, and Jackpot
-            Slots.
+          <p className="mt-5">
+            Some online gaming platforms may offer features involving deposits,
+            withdrawals, rewards, or other financial transactions. If such
+            features are available through IV7, users should carefully review
+            the applicable terms and conditions before using them.
           </p>
+          <p className="mt-4">
+            Real-money gaming can involve financial risk. Do not treat gaming as
+            a guaranteed way to earn money, and never spend money that you
+            cannot afford to lose.
+          </p>
+          <p className="mt-4">
+            Users should also check the laws and age restrictions applicable in
+            their location before using any real-money gaming feature.
+          </p>
+        </section>
 
-          <div className="relative mt-10 w-full overflow-hidden">
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 sm:w-28 bg-gradient-to-r from-[#070707] to-transparent" />
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 sm:w-28 bg-gradient-to-l from-[#070707] to-transparent" />
-
-            <div className="flex w-full overflow-hidden select-none py-4">
-              <div className="animate-marquee flex items-center gap-4">
-                {[...LATEST_WINNERS, ...LATEST_WINNERS].map((winner, idx) => (
-                  <div
-                    key={idx}
-                    className="group inline-flex min-w-[240px] items-center gap-3.5 rounded-2xl border border-[#50142a] bg-[#12070b] p-4 text-left shadow-lg transition-all duration-300 hover:border-[#f20d4d] hover:-translate-y-1 hover:shadow-[0_8px_25px_#f20d4d25]"
-                  >
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#f4144b] to-[#a30b31] text-white shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                      <Trophy className="h-6 w-6 text-[#ffc629]" />
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-white transition-colors group-hover:text-[#ffc629]">
-                        {winner.name}
-                      </div>
-                      <div className="text-[11px] text-[#8f8588]">
-                        {winner.game}
-                      </div>
-                      <div className="font-['Impact',sans-serif] text-base tracking-wide text-[#ffc629]">
-                        {winner.amount}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. DOWNLOAD CTA BANNER */}
-      <section
-        id="download"
-        className="relative overflow-hidden border-t border-[#3b1221] bg-gradient-to-r from-[#20040c] via-[#0d0709] to-[#1a040b] px-6 py-20 lg:py-24"
-        aria-label="Download App"
-      >
-        <div className="pointer-events-none absolute right-1/4 top-1/2 h-[400px] w-[500px] -translate-y-1/2 rounded-full bg-[#f20d4d]/15 blur-[150px]" />
-
-        <div className="relative mx-auto max-w-[1320px]">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            <div className="text-center lg:text-left space-y-6">
-              <span className="inline-flex items-center gap-1.5 animate-pulse rounded-full border border-[#6c1731] bg-[#2b0b17] px-4 py-1.5 text-xs font-bold text-[#ffc629]">
-                <Smartphone className="h-3.5 w-3.5" /> FREE DOWNLOAD
-              </span>
-
-              <h2 className="font-['Impact',sans-serif] text-4xl uppercase tracking-wide text-white sm:text-5xl lg:text-6xl leading-[1.05]">
-                DOWNLOAD{" "}
-                <span className="text-[#ffc629]">IV7 APK LATEST VERSION</span>{" "}
-                FOR ANDROID
-              </h2>
-
-              <p className="text-sm sm:text-base leading-relaxed text-[#c8c0c2] max-w-xl mx-auto lg:mx-0">
-                Download the latest IV7 APK for Android and access a complete
-                mobile gaming experience with instant UPI withdrawals and secure
-                login.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs sm:text-sm font-semibold text-slate-200 max-w-lg mx-auto lg:mx-0">
-                {[
-                  "Free to Download",
-                  "₹199 - ₹500 Bonus",
-                  "Instant UPI Withdrawals",
-                  "50+ Premium Games",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-2.5 rounded-xl border border-[#381622] bg-[#14080d] p-3 transition-colors hover:border-[#f20d4d]/50"
-                  >
-                    <CheckCircle2 className="h-4 w-4 text-[#2bf57c] shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <Link
-                  href={DOWNLOAD_LINKS.DEFAULT_APK}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="relative group overflow-hidden inline-flex items-center justify-center gap-4 rounded-full bg-gradient-to-r from-[#fb154c] to-[#e90843] px-10 py-4 text-white shadow-[0_10px_28px_#ee0d4540] transition-all duration-300 hover:scale-105 hover:shadow-[0_15px_35px_#ee0d4570] active:scale-95"
-                >
-                  <Download className="h-6 w-6" />
-                  <div className="text-left">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-white/80">
-                      Download for
-                    </div>
-                    <div className="text-base font-extrabold leading-tight">
-                      Android APK
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </div>
-
-            {/* Mockup Column */}
-            <div className="relative flex justify-center items-center">
-              <div className="relative flex h-[420px] sm:h-[500px] w-full max-w-[380px] items-center justify-center rounded-[36px] border border-[#50152c] bg-gradient-to-b from-[#19040c] via-[#0e070a] to-[#070707] p-6 shadow-[0_0_60px_#e6004325] transition-transform duration-500 hover:scale-105">
-                <Image
-                  src={iv7}
-                  alt="IV7 App"
-                  width={240}
-                  height={240}
-                  priority
-                  className="relative z-10 object-contain drop-shadow-[0_20px_40px_#f20d4d50] transition-transform duration-500 hover:rotate-1"
-                />
-                <div className="absolute top-8 -left-3 animate-bounce rounded-xl border border-[#ffc629]/40 bg-[#1c1305]/95 px-3 py-1.5 text-xs font-bold text-[#ffc629] shadow-xl backdrop-blur-md">
-                  ⚡ ₹199 Instant Credit
-                </div>
-                <div className="absolute bottom-8 -right-3 animate-pulse rounded-xl border border-[#2bf57c]/40 bg-[#06180c]/95 px-3 py-1.5 text-xs font-bold text-[#2bf57c] shadow-xl backdrop-blur-md">
-                  ✓ Instant UPI Payouts
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. FAQ ACCORDION */}
-      <section id="faq" className="border-t border-[#1b1215] px-6 py-20">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center">
-            <span className="rounded-full border border-[#6c1731] bg-[#2b0b17] px-4 py-1.5 text-xs font-bold text-[#ffc629]">
-              HELP CENTER
-            </span>
-            <h2 className="mt-3 font-['Impact',sans-serif] text-4xl uppercase tracking-wide text-white sm:text-5xl">
-              FREQUENTLY ASKED QUESTIONS
-            </h2>
-          </div>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            {FAQ_CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFaqCategory(cat)}
-                className={`rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-200 ${
-                  faqCategory === cat
-                    ? "bg-[#f20d4d] text-white shadow-[0_0_15px_#f20d4d40]"
-                    : "border border-[#383334] bg-[#141213] text-[#a59ca0] hover:border-[#50152c] hover:text-white"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
-            {filteredFaqs.map((faq, index) => (
-              <div
-                key={index}
-                onClick={() => toggleFaq(index)}
-                className="cursor-pointer rounded-2xl border border-[#50152c] bg-[#12070b] p-5 transition-all duration-200 hover:border-[#f20d4d]/60 hover:-translate-y-0.5"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <span className="text-sm font-bold text-[#eee]">{faq.q}</span>
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#292226] text-xs font-bold text-white">
-                    {openFaq === index ? (
-                      <Minus className="h-3.5 w-3.5" />
-                    ) : (
-                      <Plus className="h-3.5 w-3.5" />
-                    )}
-                  </span>
-                </div>
-                {openFaq === index && (
-                  <p className="mt-3 text-xs leading-relaxed text-[#9e9497] border-t border-[#29141c] pt-3 animate-fadeIn">
-                    {faq.a}
-                  </p>
-                )}
+        <section
+          aria-labelledby="faq"
+          className="mt-16 border-t border-[#26313b] pt-12"
+        >
+          <h2 id="faq" className="text-3xl font-bold sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-7 space-y-7">
+            {FAQ_DATA.map(({ q: question, a: answer }) => (
+              <div key={question}>
+                <h3 className="text-xl font-semibold text-[#f4d27d]">
+                  {question}
+                </h3>
+                <p className="mt-2">{answer}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 10. BLOG & GUIDES */}
-      <section id="blog" className="border-t border-[#1b1215] px-6 pt-20 pb-28">
-        <div className="mx-auto max-w-[1320px]">
-          <div className="text-center">
-            <span className="inline-block animate-pulse rounded-full border border-[#6c1731] bg-[#2b0b17] px-4 py-1.5 text-xs font-bold text-[#ffc629]">
-              LATEST ARTICLES
-            </span>
-            <h2 className="mt-3 font-['Impact',sans-serif] text-4xl uppercase tracking-wide text-white sm:text-5xl">
-              IV7 GAME BLOG – TIPS, TRICKS & GUIDES
-            </h2>
-          </div>
+        <section
+          aria-labelledby="final-thoughts"
+          className="mt-16 border-t border-[#26313b] pt-12"
+        >
+          <h2 id="final-thoughts" className="text-3xl font-bold sm:text-4xl">
+            Final Thoughts
+          </h2>
+          <p className="mt-5">
+            IV7 Game provides a mobile-oriented platform for users interested in
+            exploring different gaming options through one interface. From IV7
+            Games and the IV7 Games Download process to IV7 Game Register, the
+            platform is designed to give new and existing users a
+            straightforward way to access its available features.
+          </p>
+          <p className="mt-4">
+            If you are planning to download IV7, make sure you obtain the
+            application from a legitimate source and check the current version
+            before installation. Android users should also review security
+            settings and application permissions when installing an APK.
+          </p>
+          <p className="mt-4">
+            For new users, registration should be completed through the
+            platform&apos;s official process, and account credentials should
+            always be kept private.
+          </p>
+          <h6 className="mt-8 text-sm font-bold uppercase tracking-wider text-[#e6b84e]">
+            Important note
+          </h6>
+          <p className="mt-2">
+            Use gaming platforms responsibly. If real-money features are
+            available, understand the risks, terms, age requirements, and laws
+            applicable to your location before participating.
+          </p>
+          <p className="mt-4">
+            IV7 Game is best presented as a convenient mobile gaming platform,
+            not as a guaranteed source of income. By using reliable information,
+            protecting your account, and making informed decisions, you can have
+            a safer and more transparent experience.
+          </p>
+        </section>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {BLOG_POSTS.slice(0, 3).map((post, idx) => (
-              <Link
-                key={post.id}
-                href={`/blog/${post.slug}`}
-                className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-[#4a1328] bg-[#14080d] transition-all duration-300 hover:-translate-y-2 hover:border-[#f20d4d]/70 hover:shadow-[0_15px_30px_#f20d4d20]"
-              >
-                <div
-                  className={`flex h-40 flex-col justify-center p-6 text-white transition-transform duration-500 group-hover:scale-105 ${
-                    idx === 0
-                      ? "bg-gradient-to-br from-[#082a81] to-[#d4157c]"
-                      : idx === 1
-                        ? "bg-gradient-to-br from-[#171aa0] to-[#ed0c52]"
-                        : "bg-gradient-to-br from-[#3111a0] to-[#ef0a62]"
-                  }`}
-                >
-                  <b className="text-lg font-bold leading-tight group-hover:text-[#ffc629] transition-colors">
-                    {post.title}
-                  </b>
-                  <small className="mt-2 text-xs font-extrabold uppercase tracking-widest text-[#ffdb47]">
-                    {post.category}
-                  </small>
-                </div>
-
-                <div className="p-6 space-y-4">
-                  <p className="text-xs leading-relaxed text-[#9e9497] line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between border-t border-[#29141c] pt-4 text-[11px] text-[#8f8588]">
-                    <span>{post.date}</span>
-                    <span className="inline-flex items-center gap-1 font-bold text-[#ff2159] transition-transform duration-300 group-hover:translate-x-1">
-                      Read Guide <ArrowRight className="h-3.5 w-3.5" />
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
+        <section
+          className="mt-16 border-t border-[#26313b] pt-12 text-center"
+          aria-labelledby="final-cta"
+        >
+          <h2 id="final-cta" className="text-3xl font-bold sm:text-4xl">
+            Explore IV7 Game Information
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl">
+            Review the current source, verify any APK before installation, and
+            follow the platform&apos;s latest instructions for access,
+            registration, and login.
+          </p>
+          <Link
+            href={DOWNLOAD_LINKS.DEFAULT_APK}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-7 inline-flex items-center gap-2 rounded-md bg-[#e6b84e] px-5 py-3 font-bold text-[#17130a] transition hover:bg-[#f4cc70]"
+          >
+            <Download className="h-4 w-4" />
+            Visit the current source
+          </Link>
+        </section>
+      </div>
+    </article>
   );
 }

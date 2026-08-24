@@ -6,14 +6,14 @@ import FAQController from "./faq.controller";
 export const metadata = buildMetadata({
   title: "FAQ – IV7 Games Official Support & Questions",
   description:
-    "Find answers to frequently asked questions about IV7 Game APK download, account registration, UPI withdrawals, and welcome bonuses.",
+    "Find clear answers about IV7 Game, IV7 Games Download, IV7 Game Register, Android compatibility, APK safety, and responsible gaming.",
   path: "/faq",
   keywords: [
     "IV7 FAQ",
     "IV7 Game help",
     "IV7 support",
-    "IV7 withdrawal help",
     "IV7 APK download guide",
+    "IV7 Game Register",
   ],
 });
 

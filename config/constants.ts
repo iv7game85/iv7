@@ -95,15 +95,17 @@ export const SITE_URL =
 export const SITE_CONFIG = {
   name: "IV7 Games",
   url: SITE_URL,
-  title: "IV7 Games - Official IV7 Game App & Download Guide",
+  title: "IV7 Game – IV7 Games Download & Register",
   description:
-    "Discover IV7 Games, download guides, game information, app features, FAQs, bonuses, and the latest IV7 gaming updates.",
+    "Explore IV7 Games, download guidance, registration information, Android access, safety tips, FAQs, and responsible gaming information.",
   keywords: [
     "IV7",
     "IV7 Game",
     "IV7 APK",
     "IV7 App",
     "IV7 download guide",
+    "IV7 Login",
+    "IV7 Android",
     "IV7 FAQ",
   ],
   language: "en-IN",
@@ -262,60 +264,44 @@ export const FAQ_CATEGORIES = [
   "All",
   "General",
   "Account & APK",
-  "Withdrawal & Bonus",
   "Legality & Rules",
 ] as const;
 
 export const FAQ_DATA: FAQItem[] = [
   {
     category: "General",
-    q: "What is IV7 Game APK?",
-    a: "IV7 is an online real-cash skill and prediction gaming platform where players can compete in Win Go color prediction, Aviator, Slots, Teen Patti, and Rummy to win instant cash rewards.",
+    q: "What is IV7 Game?",
+    a: "IV7 Game is a mobile-focused gaming platform that brings different types of games and account features together in one place.",
   },
   {
     category: "Account & APK",
-    q: "Is IV7 Game safe to download and install?",
-    a: "Yes. The IV7 APK is 100% virus-scanned, malware-free, and hosted on secure encrypted servers with 256-bit SSL protection for all transactions and user data.",
+    q: "What are IV7 Games?",
+    a: "IV7 Games refers to the range of games available through the IV7 platform. The selection may include different card, casual, prediction-style, and other gaming formats depending on the current version.",
   },
   {
-    category: "Withdrawal & Bonus",
-    q: "Does IV7 provide a new user signup bonus?",
-    a: "Yes! All newly registered users receive an instant welcome Spin & Win bonus ranging from ₹200 to ₹500 upon verifying their mobile number.",
+    category: "Account & APK",
+    q: "How can I complete IV7 Games Download?",
+    a: "If an official Android APK is available, obtain it from the legitimate IV7 source and follow the Android installation instructions. Always verify the APK before installing it.",
   },
   {
-    category: "Withdrawal & Bonus",
-    q: "How fast are withdrawals processed on IV7?",
-    a: "Instant UPI and Paytm withdrawals are processed automatically within 5 to 15 minutes. IMPS direct bank transfers are credited within 1 to 2 hours.",
+    category: "Account & APK",
+    q: "How does IV7 Game Register work?",
+    a: "New users can generally select the Register or Sign Up option and provide the information requested by the platform. Verification may be required before an account can be used.",
   },
   {
-    category: "Withdrawal & Bonus",
-    q: "What is the minimum withdrawal limit?",
-    a: "The minimum withdrawal threshold is ₹100, which can be withdrawn 24/7 without hidden deduction fees.",
+    category: "Account & APK",
+    q: "Is IV7 available on Android?",
+    a: "IV7 is presented as a mobile-focused platform, and an Android APK may be available depending on the current release. Check the current system requirements before installation.",
   },
   {
     category: "General",
-    q: "Which games can I play on the IV7 App?",
-    a: "IV7 features Win Go (1Min/3Min/5Min), Aviator, Trx Hash, Dragon vs Tiger, Fortune Tiger, Teen Patti, Andar Bahar, and Mega Jackpot Slots.",
-  },
-  {
-    category: "Account & APK",
-    q: "Why is IV7 not available on Google Play Store?",
-    a: `Google Play Store policies restrict real-money gaming apps in certain regions. You can safely download the official APK file directly from ${SITE_CONFIG.url}.`,
+    q: "Is an IV7 APK safe?",
+    a: "Safety depends on the authenticity of the APK and where it was downloaded. Avoid unofficial modified files and verify the source before installing an application.",
   },
   {
     category: "Legality & Rules",
-    q: "Is playing on IV7 legal in India?",
-    a: "Skill-based online gaming is legally recognized in most Indian states. Players must verify their local jurisdiction guidelines before playing.",
-  },
-  {
-    category: "Legality & Rules",
-    q: "What is the age requirement to play?",
-    a: "IV7 is strictly restricted to adult users who are 18 years of age or older.",
-  },
-  {
-    category: "Account & APK",
-    q: "How can I contact IV7 customer support?",
-    a: "Support is available 24/7 through the in-app live chat widget, official Telegram community channel, and dedicated email desk.",
+    q: "Can I play every IV7 game on every device?",
+    a: "Not necessarily. Game availability and compatibility can depend on the current application version, device, operating system, and region.",
   },
 ];
 

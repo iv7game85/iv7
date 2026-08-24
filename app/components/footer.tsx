@@ -56,8 +56,8 @@ export default function Footer() {
 
         {/* Tagline */}
         <p className="mt-6 max-w-md text-sm font-normal leading-relaxed text-[#a8a0a5] sm:text-base">
-          India&apos;s premier online gaming destination — play smart, win real
-          rewards, and withdraw instantly.
+          An informational guide to IV7 Games, Android access, registration,
+          account safety, and responsible gaming.
         </p>
 
         {/* Main Navigation Links */}
@@ -80,20 +80,6 @@ export default function Footer() {
               18+
             </span>
             <span>Strictly 18+</span>
-          </div>
-
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#2c131d] bg-[#120509]/80 px-4 py-1.5 text-xs font-medium text-[#b5a9ad] shadow-inner">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#2bf57c]/15 text-[10px] font-bold text-[#2bf57c]">
-              ✓
-            </span>
-            <span>RNG Certified & Fair</span>
-          </div>
-
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#2c131d] bg-[#120509]/80 px-4 py-1.5 text-xs font-medium text-[#b5a9ad] shadow-inner">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#ffc629]/15 text-[10px] font-bold text-[#ffc629]">
-              ⚡
-            </span>
-            <span>Instant Payouts</span>
           </div>
         </div>
 
