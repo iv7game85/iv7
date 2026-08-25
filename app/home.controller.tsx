@@ -110,7 +110,7 @@ export default function HomeController() {
             </span>
           </div>
 
-          {/* Page Heading 1 */}
+          {/* Heading 1 (1 Tag) */}
           <h1 className="!my-2 max-w-4xl !text-2xl font-black !leading-[1.2] tracking-tight text-[var(--foreground)] xs:!text-3xl sm:!text-5xl lg:!text-6xl">
             IV7 Game – Explore IV7 Games, Download &amp; Register
           </h1>
@@ -162,12 +162,13 @@ export default function HomeController() {
 
       {/* Main Content Area */}
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-10 lg:px-16">
+        {/* Heading 2 (Tag 1/2) */}
         <section aria-labelledby="welcome">
           <h2
             id="welcome"
             className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
           >
-            Welcome to IV7 Game
+            Welcome to IV7 Game &amp; Platform Overview
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
             Welcome to the IV7 Game platform, a mobile-focused destination where
@@ -192,16 +193,17 @@ export default function HomeController() {
           </p>
         </section>
 
+        {/* Heading 3 (Tag 1/5) */}
         <section
           aria-labelledby="what-is-iv7"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
         >
-          <h2
+          <h3
             id="what-is-iv7"
-            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
             What Is IV7 Game?
-          </h2>
+          </h3>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
             IV7 Game is presented as a mobile gaming platform that brings
             different gaming experiences together in one place. The platform is
@@ -227,16 +229,17 @@ export default function HomeController() {
           </p>
         </section>
 
+        {/* Heading 3 (Tag 2/5) */}
         <section
           aria-labelledby="games"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
         >
-          <h2
+          <h3
             id="games"
-            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
             Explore IV7 Games
-          </h2>
+          </h3>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             The IV7 Games section is designed around providing different types
             of gaming experiences through one platform. Depending on the current
@@ -249,10 +252,11 @@ export default function HomeController() {
                 className="group rounded-2xl border border-[var(--border)]/70 bg-gradient-to-b from-[var(--deep)]/60 via-[#0e070c] to-[#080507] p-5 transition-all duration-300 hover:border-[var(--gold)]/40 hover:shadow-lg hover:shadow-black/50"
               >
                 <div className="border-l-2 border-[var(--gold)] pl-3.5">
-                  <p className="flex items-center gap-2 text-base font-bold text-[var(--gold)] sm:text-xl">
+                  {/* Heading 4 */}
+                  <h4 className="flex items-center gap-2 text-base font-bold text-[var(--gold)] sm:text-xl">
                     <Gamepad2 className="h-4 w-4 text-[var(--gold)]/80" />
                     <span>{title}</span>
-                  </p>
+                  </h4>
                   <p className="mt-2 text-xs leading-relaxed text-[var(--muted)] sm:text-sm sm:leading-normal">
                     {text}
                   </p>
@@ -267,16 +271,17 @@ export default function HomeController() {
           </p>
         </section>
 
+        {/* Heading 2 (Tag 2/2) */}
         <section
           id="download"
-          aria-labelledby="download-heading"
-          className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
+          aria-labelledby="download-guide-section"
+          className="mt-14 border-t border-[var(--border)] pt-10 sm:mt-16 sm:pt-12"
         >
           <h2
-            id="download-heading"
+            id="download-guide-section"
             className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
           >
-            IV7 Games Download
+            IV7 Games Download, Registration &amp; Safety Guide
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             Searching for IV7 Games Download usually means you want to access
@@ -297,22 +302,41 @@ export default function HomeController() {
               </span>
             </p>
           </div>
+        </section>
 
-          <p className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
-            General Android Installation Process
+        {/* Heading 3 (Tag 3/5) */}
+        <section
+          aria-labelledby="download-heading"
+          className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
+        >
+          <h3
+            id="download-heading"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
+          >
+            IV7 Games Download
+          </h3>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+            Follow the standard installation procedure below to set up the IV7
+            application on compatible devices.
           </p>
+
+          {/* Heading 4 */}
+          <h4 className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
+            General Android Installation Process
+          </h4>
           <div className="mt-4 space-y-3">
             {downloadSteps.map(([title, text], index) => (
               <div
                 key={title}
                 className="group rounded-2xl border border-[var(--border)]/70 bg-[#0d090c] p-4 transition-all duration-200 hover:border-[var(--red)]/40 hover:bg-[var(--deep)]/30 sm:p-5"
               >
-                <p className="flex items-center gap-2 text-sm font-bold text-[var(--foreground)] sm:text-lg">
+                {/* Heading 5 */}
+                <h5 className="flex items-center gap-2 text-sm font-bold text-[var(--foreground)] sm:text-lg">
                   <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-md bg-[var(--gold)]/10 px-1.5 text-xs font-black text-[var(--gold)]">
                     Step {index + 1}
                   </span>
                   <span>{title}</span>
-                </p>
+                </h5>
                 <p className="mt-2 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
                   {text}
                 </p>
@@ -321,16 +345,17 @@ export default function HomeController() {
           </div>
         </section>
 
+        {/* Heading 3 (Tag 4/5) */}
         <section
           aria-labelledby="register"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
         >
-          <h2
+          <h3
             id="register"
-            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
             IV7 Game Register
-          </h2>
+          </h3>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             After accessing the platform, new users may need to complete the IV7
             Game Register process before using account-based features.
@@ -341,9 +366,10 @@ export default function HomeController() {
             and completing any required verification.
           </p>
 
-          <p className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
+          {/* Heading 4 */}
+          <h4 className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
             Typical Registration Steps
-          </p>
+          </h4>
           <ol className="mt-4 space-y-2.5">
             {registerSteps.map((step, idx) => (
               <li
@@ -359,10 +385,11 @@ export default function HomeController() {
           </ol>
 
           <div className="mt-5 rounded-2xl border border-[var(--border)] bg-[var(--deep)]/70 p-4 sm:p-5">
-            <p className="flex items-center gap-2 text-sm font-bold text-[var(--gold)] sm:text-lg">
+            {/* Heading 5 */}
+            <h5 className="flex items-center gap-2 text-sm font-bold text-[var(--gold)] sm:text-lg">
               <ShieldCheck className="h-4 w-4 text-[var(--gold)]" />
               <span>Account security reminder</span>
-            </p>
+            </h5>
             <p className="mt-1.5 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
               Keep your account information private. Never share your password,
               OTP, PIN, or other security credentials with another person.
@@ -370,16 +397,18 @@ export default function HomeController() {
           </div>
         </section>
 
+        {/* Features Sub-section */}
         <section
           aria-labelledby="features"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
         >
-          <h2
+          {/* Heading 4 */}
+          <h4
             id="features"
-            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
             Why Choose a Mobile Gaming Platform?
-          </h2>
+          </h4>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             Mobile gaming has become increasingly convenient because users can
             access entertainment directly from their smartphones.
@@ -407,9 +436,10 @@ export default function HomeController() {
             device, region, and platform policies.
           </p>
 
-          <p className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
+          {/* Heading 5 */}
+          <h5 className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
             IV7 Game Features
-          </p>
+          </h5>
           <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             The IV7 platform focuses on providing a straightforward experience
             for mobile users. Features can change over time, but users may find
@@ -421,9 +451,10 @@ export default function HomeController() {
                 key={title}
                 className="rounded-2xl border border-[var(--border)]/70 bg-[#0d090c] p-4 sm:p-5"
               >
-                <p className="text-sm font-bold text-[var(--gold)] sm:text-lg">
+                {/* Heading 6 */}
+                <h6 className="text-sm font-bold text-[var(--gold)] sm:text-lg">
                   {title}
-                </p>
+                </h6>
                 <p className="mt-1 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
                   {text}
                 </p>
@@ -432,16 +463,18 @@ export default function HomeController() {
           </div>
         </section>
 
+        {/* Android & Login Sub-section */}
         <section
           aria-labelledby="android"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
         >
-          <h2
+          {/* Heading 4 */}
+          <h4
             id="android"
-            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
             IV7 on Android
-          </h2>
+          </h4>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             Android users are often interested in IV7 Games Download because APK
             installation provides another way to access an application outside a
@@ -459,9 +492,10 @@ export default function HomeController() {
             and Android compatibility.
           </p>
 
-          <p className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
+          {/* Heading 5 */}
+          <h5 className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
             IV7 Game Login
-          </p>
+          </h5>
           <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             Existing users can use the platform&apos;s login option to access
             their account. Always use the official login page or application,
@@ -476,16 +510,18 @@ export default function HomeController() {
           </p>
         </section>
 
+        {/* Safety Tips Sub-section */}
         <section
           aria-labelledby="safety"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
         >
-          <h2
+          {/* Heading 4 */}
+          <h4
             id="safety"
-            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
             Safety Tips Before IV7 Games Download
-          </h2>
+          </h4>
           <div className="mt-4 space-y-3">
             {[
               [
@@ -513,9 +549,10 @@ export default function HomeController() {
                 key={title}
                 className="rounded-2xl border border-[var(--border)]/70 bg-[#0d090c] p-4 transition-colors hover:border-[var(--red)]/40 sm:p-5"
               >
-                <p className="text-sm font-bold text-[var(--gold)] sm:text-lg">
+                {/* Heading 5 */}
+                <h5 className="text-sm font-bold text-[var(--gold)] sm:text-lg">
                   {title}
-                </p>
+                </h5>
                 <p className="mt-1 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
                   {text}
                 </p>
@@ -524,16 +561,18 @@ export default function HomeController() {
           </div>
         </section>
 
+        {/* Responsible Gaming Sub-section */}
         <section
           aria-labelledby="responsible"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
         >
-          <h2
+          {/* Heading 4 */}
+          <h4
             id="responsible"
-            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
             Responsible Gaming
-          </h2>
+          </h4>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             Some online gaming platforms may offer features involving deposits,
             withdrawals, rewards, or other financial transactions. If such
@@ -551,26 +590,28 @@ export default function HomeController() {
           </p>
         </section>
 
+        {/* Heading 3 (Tag 5/5) */}
         <section
           aria-labelledby="faq"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
         >
-          <h2
+          <h3
             id="faq"
-            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
             Frequently Asked Questions
-          </h2>
+          </h3>
           <div className="mt-4 space-y-3">
             {FAQ_DATA.map(({ q: question, a: answer }) => (
               <div
                 key={question}
                 className="rounded-2xl border border-[var(--border)]/70 bg-gradient-to-b from-[var(--deep)]/50 to-[#0d090b] p-4 transition-all duration-200 hover:border-[var(--border)] sm:p-5"
               >
-                <p className="flex items-center gap-2 text-sm font-bold text-[var(--gold)] sm:text-lg">
+                {/* Heading 5 */}
+                <h5 className="flex items-center gap-2 text-sm font-bold text-[var(--gold)] sm:text-lg">
                   <HelpCircle className="h-4 w-4 shrink-0 text-[var(--gold)]/80" />
                   <span>{question}</span>
-                </p>
+                </h5>
                 <p className="mt-1.5 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
                   {answer}
                 </p>
@@ -579,16 +620,18 @@ export default function HomeController() {
           </div>
         </section>
 
+        {/* Final Thoughts Sub-section */}
         <section
           aria-labelledby="final-thoughts"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
         >
-          <h2
+          {/* Heading 4 */}
+          <h4
             id="final-thoughts"
-            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
             Final Thoughts
-          </h2>
+          </h4>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             IV7 Game provides a mobile-oriented platform for users interested in
             exploring different gaming options through one interface. From IV7
@@ -609,10 +652,11 @@ export default function HomeController() {
           </p>
 
           <div className="mt-5 rounded-2xl border border-[var(--red)]/40 bg-gradient-to-r from-[var(--deep)] to-[#0e070c] p-4 sm:p-5">
-            <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[var(--gold)] sm:text-sm">
+            {/* Heading 6 */}
+            <h6 className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[var(--gold)] sm:text-sm">
               <AlertTriangle className="h-3.5 w-3.5 text-[var(--gold)]" />
               <span>Important note</span>
-            </p>
+            </h6>
             <p className="mt-1.5 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
               Use gaming platforms responsibly. If real-money features are
               available, understand the risks, terms, age requirements, and laws
@@ -633,12 +677,13 @@ export default function HomeController() {
           className="mt-12 rounded-3xl border border-[var(--border)] bg-gradient-to-b from-[var(--deep)] to-[#0c080a] px-4 py-8 text-center sm:mt-16 sm:px-10 sm:py-14"
           aria-labelledby="final-cta"
         >
-          <h2
+          {/* Heading 4 */}
+          <h4
             id="final-cta"
-            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
             Explore IV7 Game Information
-          </h2>
+          </h4>
           <p className="mx-auto mt-2 max-w-2xl text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
             Review the current source, verify any APK before installation, and
             follow the platform&apos;s latest instructions for access,
