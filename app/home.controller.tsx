@@ -110,7 +110,7 @@ export default function HomeController() {
             </span>
           </div>
 
-          {/* Heading 1 */}
+          {/* Page Heading 1 */}
           <h1 className="!my-2 max-w-4xl !text-2xl font-black !leading-[1.2] tracking-tight text-[var(--foreground)] xs:!text-3xl sm:!text-5xl lg:!text-6xl">
             IV7 Game – Explore IV7 Games, Download &amp; Register
           </h1>
@@ -249,10 +249,10 @@ export default function HomeController() {
                 className="group rounded-2xl border border-[var(--border)]/70 bg-gradient-to-b from-[var(--deep)]/60 via-[#0e070c] to-[#080507] p-5 transition-all duration-300 hover:border-[var(--gold)]/40 hover:shadow-lg hover:shadow-black/50"
               >
                 <div className="border-l-2 border-[var(--gold)] pl-3.5">
-                  <h3 className="flex items-center gap-2 text-base font-bold text-[var(--gold)] sm:text-xl">
+                  <p className="flex items-center gap-2 text-base font-bold text-[var(--gold)] sm:text-xl">
                     <Gamepad2 className="h-4 w-4 text-[var(--gold)]/80" />
-                    {title}
-                  </h3>
+                    <span>{title}</span>
+                  </p>
                   <p className="mt-2 text-xs leading-relaxed text-[var(--muted)] sm:text-sm sm:leading-normal">
                     {text}
                   </p>
@@ -298,21 +298,21 @@ export default function HomeController() {
             </p>
           </div>
 
-          <h3 className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
+          <p className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
             General Android Installation Process
-          </h3>
+          </p>
           <div className="mt-4 space-y-3">
             {downloadSteps.map(([title, text], index) => (
               <div
                 key={title}
                 className="group rounded-2xl border border-[var(--border)]/70 bg-[#0d090c] p-4 transition-all duration-200 hover:border-[var(--red)]/40 hover:bg-[var(--deep)]/30 sm:p-5"
               >
-                <h4 className="flex items-center gap-2 text-sm font-bold text-[var(--foreground)] sm:text-lg">
+                <p className="flex items-center gap-2 text-sm font-bold text-[var(--foreground)] sm:text-lg">
                   <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-md bg-[var(--gold)]/10 px-1.5 text-xs font-black text-[var(--gold)]">
                     Step {index + 1}
                   </span>
-                  {title}
-                </h4>
+                  <span>{title}</span>
+                </p>
                 <p className="mt-2 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
                   {text}
                 </p>
@@ -341,9 +341,9 @@ export default function HomeController() {
             and completing any required verification.
           </p>
 
-          <h3 className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
+          <p className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
             Typical Registration Steps
-          </h3>
+          </p>
           <ol className="mt-4 space-y-2.5">
             {registerSteps.map((step, idx) => (
               <li
@@ -359,10 +359,10 @@ export default function HomeController() {
           </ol>
 
           <div className="mt-5 rounded-2xl border border-[var(--border)] bg-[var(--deep)]/70 p-4 sm:p-5">
-            <h5 className="flex items-center gap-2 text-sm font-bold text-[var(--gold)] sm:text-lg">
+            <p className="flex items-center gap-2 text-sm font-bold text-[var(--gold)] sm:text-lg">
               <ShieldCheck className="h-4 w-4 text-[var(--gold)]" />
-              Account security reminder
-            </h5>
+              <span>Account security reminder</span>
+            </p>
             <p className="mt-1.5 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
               Keep your account information private. Never share your password,
               OTP, PIN, or other security credentials with another person.
@@ -398,7 +398,7 @@ export default function HomeController() {
                 className="flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[#0d090b] p-3 text-xs text-[var(--foreground)]/90 transition-colors hover:border-[var(--gold)]/40 sm:text-sm"
               >
                 <ChevronRight className="h-3.5 w-3.5 shrink-0 text-[var(--gold)]" />
-                {item}
+                <span>{item}</span>
               </li>
             ))}
           </ul>
@@ -407,9 +407,9 @@ export default function HomeController() {
             device, region, and platform policies.
           </p>
 
-          <h3 className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
+          <p className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
             IV7 Game Features
-          </h3>
+          </p>
           <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             The IV7 platform focuses on providing a straightforward experience
             for mobile users. Features can change over time, but users may find
@@ -421,9 +421,9 @@ export default function HomeController() {
                 key={title}
                 className="rounded-2xl border border-[var(--border)]/70 bg-[#0d090c] p-4 sm:p-5"
               >
-                <h4 className="text-sm font-bold text-[var(--gold)] sm:text-lg">
+                <p className="text-sm font-bold text-[var(--gold)] sm:text-lg">
                   {title}
-                </h4>
+                </p>
                 <p className="mt-1 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
                   {text}
                 </p>
@@ -459,9 +459,9 @@ export default function HomeController() {
             and Android compatibility.
           </p>
 
-          <h3 className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
+          <p className="mt-8 text-lg font-bold text-[var(--gold)] sm:text-2xl">
             IV7 Game Login
-          </h3>
+          </p>
           <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
             Existing users can use the platform&apos;s login option to access
             their account. Always use the official login page or application,
@@ -513,9 +513,9 @@ export default function HomeController() {
                 key={title}
                 className="rounded-2xl border border-[var(--border)]/70 bg-[#0d090c] p-4 transition-colors hover:border-[var(--red)]/40 sm:p-5"
               >
-                <h3 className="text-sm font-bold text-[var(--gold)] sm:text-lg">
+                <p className="text-sm font-bold text-[var(--gold)] sm:text-lg">
                   {title}
-                </h3>
+                </p>
                 <p className="mt-1 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
                   {text}
                 </p>
@@ -567,10 +567,10 @@ export default function HomeController() {
                 key={question}
                 className="rounded-2xl border border-[var(--border)]/70 bg-gradient-to-b from-[var(--deep)]/50 to-[#0d090b] p-4 transition-all duration-200 hover:border-[var(--border)] sm:p-5"
               >
-                <h3 className="flex items-center gap-2 text-sm font-bold text-[var(--gold)] sm:text-lg">
+                <p className="flex items-center gap-2 text-sm font-bold text-[var(--gold)] sm:text-lg">
                   <HelpCircle className="h-4 w-4 shrink-0 text-[var(--gold)]/80" />
-                  {question}
-                </h3>
+                  <span>{question}</span>
+                </p>
                 <p className="mt-1.5 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
                   {answer}
                 </p>
@@ -609,10 +609,10 @@ export default function HomeController() {
           </p>
 
           <div className="mt-5 rounded-2xl border border-[var(--red)]/40 bg-gradient-to-r from-[var(--deep)] to-[#0e070c] p-4 sm:p-5">
-            <h6 className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[var(--gold)] sm:text-sm">
+            <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[var(--gold)] sm:text-sm">
               <AlertTriangle className="h-3.5 w-3.5 text-[var(--gold)]" />
-              Important note
-            </h6>
+              <span>Important note</span>
+            </p>
             <p className="mt-1.5 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
               Use gaming platforms responsibly. If real-money features are
               available, understand the risks, terms, age requirements, and laws
