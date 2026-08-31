@@ -5,7 +5,7 @@ import { ArrowUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import iv7 from "../../public/iv7.png";
+import iv7 from "../../public/iv7.jpeg";
 
 export default function Footer() {
   const [showScroll, setShowScroll] = useState(false);

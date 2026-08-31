@@ -109,7 +109,7 @@ export const SITE_CONFIG = {
     "IV7 FAQ",
   ],
   language: "en-IN",
-  ogImage: "/iv7.png",
+  ogImage: "/iv7.jpeg",
   publisher: "IV7 Games",
 } as const;
 

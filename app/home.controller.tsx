@@ -124,7 +124,7 @@ export default function HomeController() {
           <div className="my-5 flex justify-start">
             <div className="relative rounded-2xl border border-[var(--border)] bg-gradient-to-b from-[var(--deep)] to-[#0a0709] p-2.5 shadow-xl shadow-black/60 transition-transform duration-300 hover:scale-105">
               <Image
-                src="/iv7.png"
+                src="/iv7.jpeg"
                 alt="IV7 Game app graphic"
                 width={100}
                 height={100}
