@@ -144,7 +144,7 @@ export default function HomeController() {
               className="button button-small w-full justify-center text-center font-bold sm:w-auto"
             >
               <Download className="h-4 w-4" />
-              Official source
+              Download
             </Link>
 
             <a

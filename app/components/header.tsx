@@ -70,10 +70,10 @@ export default function Header() {
             href={DOWNLOAD_LINKS.DEFAULT_APK}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#fb154c] to-[#e90843] px-6 py-2.5 text-sm font-extrabold text-white shadow-[0_8px_20px_#ee0d4535] transition-all duration-300 hover:scale-105 hover:opacity-95 active:scale-95"
+            className="button button-small font-bold"
           >
-            <Download className="h-4 w-4 stroke-[2.5]" />
-            <span>Download App</span>
+            <Download className="h-4 w-4" />
+            <span>Download</span>
           </Link>
         </div>
 
@@ -120,10 +120,10 @@ export default function Header() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#fb154c] to-[#e90843] py-3 text-center text-sm font-extrabold text-white shadow-[0_8px_20px_#ee0d4535]"
+                className="button button-small w-full font-bold"
               >
-                <Download className="h-4 w-4 stroke-[2.5]" />
-                <span>Download App</span>
+                <Download className="h-4 w-4" />
+                <span>Download</span>
               </Link>
             </div>
           </nav>

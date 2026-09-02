@@ -115,7 +115,7 @@ export const SITE_CONFIG = {
 
 export const DOWNLOAD_LINKS = {
   DEFAULT_APK:
-    "https://share-rxapq9cajg.iv7.info/web/share/index.html?ic=AD62TB6F&ts=1787479740&m=2&lang=en&id=1",
+    "https://share-rxapq9cajg.iv7.info/web/share/index.html?ic=AD62TB6F&ts=1788382020&m=2&lang=en&id=1",
   TELEGRAM: "https://t.me/iv7gameofficial",
   WHATSAPP: "https://wa.me/919876543210",
   EMAIL: "support@iv7-apps.in",
