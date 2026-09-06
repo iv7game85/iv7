@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { articles } from "../config/articles";
 import { BLOG_POSTS, NAV_LINKS, SITE_CONFIG } from "../config/constants";
 
 const siteLastModified = "2026-08-23";
@@ -20,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(post.date),
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    ...articles.map((article) => ({
+      url: article.canonicalUrl,
+      lastModified: article.publishDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
   ];
 }
