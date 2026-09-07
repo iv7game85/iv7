@@ -1,4 +1,6 @@
 import type { Article } from "../../config/articles";
+import { DOWNLOAD_LINKS } from "@/config/constants";
+import { Download } from "lucide-react";
 import type { ElementType, ReactNode } from "react";
 import Link from "next/link";
 
@@ -56,12 +58,12 @@ function renderMarkdown(markdown: string): ReactNode[] {
       const content = renderInline(heading[2]);
       const className =
         level === 1
-          ? "text-3xl sm:text-4xl"
+          ? "text-3xl sm:text-4xl font-black text-white"
           : level === 2
-            ? "border-t border-[#3a1820] pt-8 text-2xl sm:text-3xl"
+            ? "border-t border-[#3a1820] pt-8 text-2xl sm:text-3xl font-bold text-white"
             : level === 3
-              ? "text-xl sm:text-2xl"
-              : "text-lg text-[#ffc629]";
+              ? "text-xl sm:text-2xl font-bold text-white"
+              : "text-lg font-semibold text-[#ffc629]";
       const Heading = `h${level}` as ElementType;
       blocks.push(
         <Heading key={blockKey++} className={className}>
@@ -137,9 +139,10 @@ function renderMarkdown(markdown: string): ReactNode[] {
 
 export default function GuidePage({ article }: { article: Article }) {
   return (
-    <main className="min-h-screen bg-[#070707] text-[#f6f1e9]">
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
-        <nav className="mb-8 text-sm text-[#a59ca0]" aria-label="Breadcrumb">
+    <main className="min-h-screen bg-[#070707] text-[#f6f1e9] selection:bg-[#f20d4d] selection:text-white">
+      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16 space-y-8">
+        {/* Breadcrumb Navigation */}
+        <nav className="text-sm text-[#a59ca0]" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-[#ffc629]">
             Home
           </Link>
@@ -147,6 +150,7 @@ export default function GuidePage({ article }: { article: Article }) {
           <span className="text-[#ffc629]">{article.title}</span>
         </nav>
 
+        {/* Article Body Container */}
         <article className="overflow-hidden rounded-3xl border border-[#50152c] bg-[#0e0609] shadow-2xl">
           <header className="border-b border-[#3a1820] bg-gradient-to-br from-[#25050e] to-[#10090b] px-6 py-10 sm:px-10">
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#ffc629]">
@@ -165,8 +169,9 @@ export default function GuidePage({ article }: { article: Article }) {
           </div>
         </article>
 
+        {/* Frequently Asked Questions */}
         <section
-          className="mt-8 rounded-3xl border border-[#3a1820] bg-[#12070b] p-6 sm:p-8"
+          className="rounded-3xl border border-[#3a1820] bg-[#12070b] p-6 sm:p-8"
           aria-labelledby="faq-heading"
         >
           <h2
@@ -179,7 +184,7 @@ export default function GuidePage({ article }: { article: Article }) {
             {article.faqs.map((faq) => (
               <details
                 key={faq.question}
-                className="group rounded-2xl border border-[#3a1820] bg-[#0e0609] p-4"
+                className="group rounded-2xl border border-[#3a1820] bg-[#0e0609] p-4 transition hover:border-[#f20d4d]/50"
               >
                 <summary className="cursor-pointer list-none font-semibold text-white marker:hidden group-open:text-[#ffc629]">
                   {faq.question}
@@ -189,6 +194,27 @@ export default function GuidePage({ article }: { article: Article }) {
                 </p>
               </details>
             ))}
+          </div>
+        </section>
+
+        {/* Bottom CTA Card Matching FAQ Page */}
+        <section className="relative overflow-hidden rounded-3xl border border-[#54152b] bg-gradient-to-r from-[#25050e] via-[#10090b] to-[#17040b] p-8 text-center space-y-4 shadow-xl">
+          <h2 className="font-['Impact',sans-serif] text-2xl sm:text-3xl uppercase tracking-wide text-white">
+            Ready to Get Started?
+          </h2>
+          <p className="text-[#c8c0c2] text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
+            Download the official verified IV7 APK file directly to your Android
+            device for complete access.
+          </p>
+          <div className="pt-2">
+            <Link
+              href={DOWNLOAD_LINKS.DEFAULT_APK}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#fb154c] to-[#e90843] px-8 py-3.5 text-sm font-extrabold text-white shadow-[0_10px_28px_#ee0d4540] transition-transform hover:scale-105 active:scale-95"
+            >
+              <Download className="h-4 w-4" /> Download Official APK
+            </Link>
           </div>
         </section>
       </div>

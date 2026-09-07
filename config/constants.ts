@@ -123,11 +123,13 @@ export const DOWNLOAD_LINKS = {
 
 export const NAV_LINKS: NavLink[] = [
   { name: "Home", href: "/" },
+  { name: "Download", href: "/iv7-apk-download" },
+  { name: "Register", href: "/iv7-game-register" },
   { name: "FAQ", href: "/faq" },
-  { name: "Disclaimer", href: "/disclaimer" },
+  { name: "Blog", href: "/blog" },
   { name: "About Us", href: "/about-us" },
   { name: "Contact Us", href: "/contact-us" },
-  { name: "Blog", href: "/blog" },
+  { name: "Disclaimer", href: "/disclaimer" },
 ];
 
 export const LEGAL_LINKS: NavLink[] = [

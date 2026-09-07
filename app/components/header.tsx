@@ -1,12 +1,11 @@
 "use client";
 
 import { DOWNLOAD_LINKS, NAV_LINKS } from "@/config/constants";
-import { Download, Menu, X } from "lucide-react";
+import { Download, Menu, UserPlus, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import iv7 from "../../public/iv7.jpeg";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,17 +15,17 @@ export default function Header() {
     if (href === "/") {
       return pathname === "/";
     }
-    return pathname.startsWith(href);
+    return pathname === href || pathname.startsWith(`${href}/`);
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#3a1820] bg-[#08080a]/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[#3a1820] bg-[#08080a]/95 backdrop-blur-xl ">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand Logo with App Glow Badge */}
-        <Link href="/" className="group flex items-center shrink-0">
+        {/* Brand Logo */}
+        <Link href="/" className="group flex shrink-0 items-center">
           <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-[10px] border border-[#50152c] bg-[#12070b] p-1.5 shadow-[0_0_20px_rgba(242,13,77,0.3)] transition-all duration-300 group-hover:scale-105 group-hover:border-[#f20d4d]">
             <Image
-              src={iv7}
+              src="/iv7.jpeg"
               alt="IV7 Game"
               width={38}
               height={38}
@@ -36,8 +35,8 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-6 lg:gap-8 md:flex">
+        {/* Desktop Navigation Links */}
+        <nav className="hidden items-center gap-5 md:flex lg:gap-7">
           {NAV_LINKS.map((link) => {
             const isActive = isLinkActive(link.href);
             return (
@@ -51,7 +50,7 @@ export default function Header() {
                 }`}
               >
                 {link.name}
-                {/* Active / Hover Underline Border */}
+                {/* Active Indicator Underline */}
                 <span
                   className={`absolute bottom-0 left-0 h-[2px] bg-[#f20d4d] transition-all duration-300 ${
                     isActive
@@ -64,20 +63,7 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Desktop Action Button */}
-        <div className="hidden md:flex items-center">
-          <Link
-            href={DOWNLOAD_LINKS.DEFAULT_APK}
-            target="_blank"
-            rel="noreferrer"
-            className="button button-small font-bold"
-          >
-            <Download className="h-4 w-4" />
-            <span>Download</span>
-          </Link>
-        </div>
-
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger Menu Toggle */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="rounded-xl border border-[#3a1820] bg-[#151013] p-2 text-[#a8a0a5] transition hover:border-[#ff1744] hover:text-[#ffc629] md:hidden"
@@ -91,7 +77,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
         <div className="border-t border-[#3a1820] bg-[#0e0a0d]/98 px-4 pb-6 pt-4 backdrop-blur-xl md:hidden">
           <nav className="space-y-1.5">
@@ -112,20 +98,6 @@ export default function Header() {
                 </Link>
               );
             })}
-
-            {/* Mobile Action Button */}
-            <div className="pt-3">
-              <Link
-                href={DOWNLOAD_LINKS.DEFAULT_APK}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => setIsMenuOpen(false)}
-                className="button button-small w-full font-bold"
-              >
-                <Download className="h-4 w-4" />
-                <span>Download</span>
-              </Link>
-            </div>
           </nav>
         </div>
       )}
