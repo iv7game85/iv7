@@ -43,6 +43,7 @@ function renderMarkdown(markdown: string): ReactNode[] {
   const blocks: ReactNode[] = [];
   let index = 0;
   let blockKey = 0;
+  let skippedArticleTitle = false;
 
   while (index < lines.length) {
     const line = lines[index].trim();
@@ -55,6 +56,14 @@ function renderMarkdown(markdown: string): ReactNode[] {
     const heading = line.match(/^(#{1,4})\s+(.+)$/);
     if (heading) {
       const level = heading[1].length;
+
+      // The page header already renders the article title as the only H1.
+      if (level === 1 && !skippedArticleTitle) {
+        skippedArticleTitle = true;
+        index += 1;
+        continue;
+      }
+
       const content = renderInline(heading[2]);
       const className =
         level === 1
