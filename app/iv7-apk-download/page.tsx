@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { getArticleBySlug } from "../../config/articles";
+import { buildMetadata } from "../../config/seo";
 import { breadcrumbJsonLd, JsonLd } from "../components/structured-data";
-import GuidePage from "../components/guide-page";
+import DownloadController from "./download.controller";
 
 const loadedArticle = getArticleBySlug("iv7-apk-download");
 
@@ -11,20 +12,20 @@ if (!loadedArticle) {
 
 const article = loadedArticle;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: article.metaTitle,
   description: article.metaDescription,
-  alternates: {
-    canonical: article.canonicalUrl,
-  },
-  openGraph: {
-    title: article.metaTitle,
-    description: article.metaDescription,
-    url: article.canonicalUrl,
-    type: "article",
-    publishedTime: article.publishDate,
-  },
-};
+  path: "/iv7-apk-download",
+  type: "article",
+  publishedTime: article.publishDate,
+  keywords: [
+    "IV7 APK download",
+    "IV7 APK",
+    "IV7 Android download",
+    "how to install IV7 APK",
+    "IV7 APK installation",
+  ],
+});
 
 const faqStructuredData = {
   "@context": "https://schema.org",
@@ -49,7 +50,7 @@ export default function IV7ApkDownloadPage() {
           { name: article.title, path: "/iv7-apk-download" },
         ])}
       />
-      <GuidePage article={article} />
+      <DownloadController />
     </>
   );
 }

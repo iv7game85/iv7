@@ -241,10 +241,10 @@ Common causes can include insufficient storage, incompatible Android versions, a
   },
   {
     slug: "iv7-apk-download",
-    metaTitle: "IV7 APK Download – Android Installation Guide 2026",
+    metaTitle: "IV7 APK Download - Android Installation Guide 2026",
     metaDescription:
-      "Looking for IV7 APK download? Learn how to download and install the Android APK, check compatibility, troubleshoot installation issues, and stay safe.",
-    title: "IV7 APK Download – Complete Android Guide",
+      "Download IV7 APK for Android and learn how to install it, check compatibility, solve common APK issues, and verify the file before use.",
+    title: "IV7 APK Download - Android Installation Guide 2026",
     canonicalUrl: "https://www.iv7-apps.in/iv7-apk-download",
     publishDate: "2026-09-06",
     faqs: [
@@ -422,10 +422,10 @@ A few minutes spent checking an APK can help you avoid problems later. If you ar
   },
   {
     slug: "iv7-game-register",
-    metaTitle: "IV7 Game Register – Complete Registration Guide",
+    metaTitle: "IV7 Game Register - Complete Registration Guide",
     metaDescription:
-      "Learn how to register on IV7 Game, create an account, complete verification, fix common registration issues, and keep your account secure.",
-    title: "IV7 Game Register – Complete Registration Guide",
+      "Learn how to register for IV7 Game, create an account, complete mobile verification, fix registration issues, and protect your login details.",
+    title: "IV7 Game Register - Complete Registration Guide",
     canonicalUrl: "https://www.iv7-apps.in/iv7-game-register",
     publishDate: "2026-09-06",
     faqs: [

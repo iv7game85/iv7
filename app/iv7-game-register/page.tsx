@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { getArticleBySlug } from "../../config/articles";
+import { buildMetadata } from "../../config/seo";
 import { breadcrumbJsonLd, JsonLd } from "../components/structured-data";
-import GuidePage from "../components/guide-page";
+import RegisterController from "./register.controller";
 
 const loadedArticle = getArticleBySlug("iv7-game-register");
 
@@ -11,20 +12,20 @@ if (!loadedArticle) {
 
 const article = loadedArticle;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: article.metaTitle,
   description: article.metaDescription,
-  alternates: {
-    canonical: article.canonicalUrl,
-  },
-  openGraph: {
-    title: article.metaTitle,
-    description: article.metaDescription,
-    url: article.canonicalUrl,
-    type: "article",
-    publishedTime: article.publishDate,
-  },
-};
+  path: "/iv7-game-register",
+  type: "article",
+  publishedTime: article.publishDate,
+  keywords: [
+    "IV7 Game register",
+    "IV7 registration",
+    "how to register on IV7",
+    "IV7 sign up",
+    "IV7 registration OTP",
+  ],
+});
 
 const faqStructuredData = {
   "@context": "https://schema.org",
@@ -49,7 +50,7 @@ export default function IV7GameRegisterPage() {
           { name: article.title, path: "/iv7-game-register" },
         ])}
       />
-      <GuidePage article={article} />
+      <RegisterController />
     </>
   );
 }
