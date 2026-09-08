@@ -12,20 +12,23 @@ if (!loadedArticle) {
 
 const article = loadedArticle;
 
-export const metadata: Metadata = buildMetadata({
-  title: article.metaTitle,
-  description: article.metaDescription,
-  path: "/iv7-apk-download",
-  type: "article",
-  publishedTime: article.publishDate,
-  keywords: [
-    "IV7 APK download",
-    "IV7 APK",
-    "IV7 Android download",
-    "how to install IV7 APK",
-    "IV7 APK installation",
-  ],
-});
+export const metadata: Metadata = {
+  ...buildMetadata({
+    title: article.metaTitle,
+    description: article.metaDescription,
+    path: "/iv7-apk-download",
+    type: "article",
+    publishedTime: article.publishDate,
+    keywords: [
+      "IV7 APK download",
+      "IV7 APK",
+      "IV7 Android download",
+      "how to install IV7 APK",
+      "IV7 APK installation",
+    ],
+  }),
+  title: { absolute: article.metaTitle },
+};
 
 const faqStructuredData = {
   "@context": "https://schema.org",

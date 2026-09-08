@@ -12,20 +12,23 @@ if (!loadedArticle) {
 
 const article = loadedArticle;
 
-export const metadata: Metadata = buildMetadata({
-  title: article.metaTitle,
-  description: article.metaDescription,
-  path: "/iv7-game-register",
-  type: "article",
-  publishedTime: article.publishDate,
-  keywords: [
-    "IV7 Game register",
-    "IV7 registration",
-    "how to register on IV7",
-    "IV7 sign up",
-    "IV7 registration OTP",
-  ],
-});
+export const metadata: Metadata = {
+  ...buildMetadata({
+    title: article.metaTitle,
+    description: article.metaDescription,
+    path: "/iv7-game-register",
+    type: "article",
+    publishedTime: article.publishDate,
+    keywords: [
+      "IV7 Game register",
+      "IV7 registration",
+      "how to register on IV7",
+      "IV7 sign up",
+      "IV7 registration OTP",
+    ],
+  }),
+  title: { absolute: article.metaTitle },
+};
 
 const faqStructuredData = {
   "@context": "https://schema.org",

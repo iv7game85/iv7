@@ -196,28 +196,33 @@ const DownloadController = () => {
         <h2 className="text-[#f6f1e9] uppercase tracking-wide border-l-4 border-[#f20d4d] pl-4 mb-5">
           How to Install IV7 APK on Android?
         </h2>
-        <p className="mb-4 text-[#a59ca0]">
-          After downloading the APK, installing it is usually straightforward.
-        </p>
-        <p className="mb-4 text-[#a59ca0]">
-          First, open the downloaded file from your phone&apos;s Downloads
-          folder. Android may show a security message because the application is
-          being installed from outside the device&apos;s normal app marketplace.
-        </p>
-        <p className="mb-4 text-[#a59ca0]">
-          If your phone asks for permission to install applications from that
-          particular source, review the request carefully. Only enable the
-          required permission when you trust the source of the APK.
-        </p>
-        <p className="mb-4 text-[#a59ca0]">
-          Return to the downloaded file and select Install. Your phone will then
-          process the application. Depending on the device, the installation may
-          take a few moments.
-        </p>
-        <p className="text-[#a59ca0]">
-          When the installation has finished, select Open to launch the
-          application.
-        </p>
+
+        {/* Numbered Steps */}
+        <ol className="list-decimal list-inside space-y-3 marker:text-white marker:font-bold text-sm leading-relaxed text-[#a59ca0] sm:text-base sm:leading-loose">
+          <li>
+            After downloading the APK, installing it is usually straightforward.
+          </li>
+          <li>
+            First, open the downloaded file from your phone&apos;s Downloads
+            folder. Android may show a security message because the application
+            is being installed from outside the device&apos;s normal app
+            marketplace.
+          </li>
+          <li>
+            If your phone asks for permission to install applications from that
+            particular source, review the request carefully. Only enable the
+            required permission when you trust the source of the APK.
+          </li>
+          <li>
+            Return to the downloaded file and select Install. Your phone will
+            then process the application. Depending on the device, the
+            installation may take a few moments.
+          </li>
+          <li>
+            When the installation has finished, select Open to launch the
+            application.
+          </li>
+        </ol>
 
         {/* Sub-sections & Diagnostics */}
         <div className="mt-8 space-y-6">

@@ -360,26 +360,31 @@ export default function HomeController() {
           >
             IV7 Game Registration
           </h3>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            New users may also search for IV7 Game Register when trying to
-            create an account.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            The registration process can vary depending on the current version
-            of the service. Generally, users should follow the registration
-            instructions provided through the legitimate application or website.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            When creating an account, always enter accurate information and
-            avoid sharing passwords, verification codes, or other sensitive
-            account information with unknown individuals.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            If you experience a registration problem, check that the information
-            entered is correct and that your internet connection is stable. For
-            account-specific problems, use the platform&apos;s available support
-            channel rather than relying on unofficial contacts.
-          </p>
+
+          <ul className="mt-4 list-disc list-inside space-y-3 marker:text-white text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
+            <li>
+              New users may also search for IV7 Game Register when trying to
+              create an account.
+            </li>
+            <li>
+              The registration process can vary depending on the current version
+              of the service. Generally, users should follow the registration
+              instructions provided through the legitimate application or
+              website.
+            </li>
+            <li>
+              When creating an account, always enter accurate information and
+              avoid sharing passwords, verification codes, or other sensitive
+              account information with unknown individuals.
+            </li>
+            <li>
+              If you experience a registration problem, check that the
+              information entered is correct and that your internet connection
+              is stable. For account-specific problems, use the platform&apos;s
+              available support channel rather than relying on unofficial
+              contacts.
+            </li>
+          </ul>
         </section>
 
         {/* H3: IV7 Games Login Guide */}
@@ -502,24 +507,28 @@ export default function HomeController() {
           >
             IV7 APK Not Installing? Try These Checks
           </h3>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Sometimes an Android APK may fail to install even when the download
-            appears to have completed successfully.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Before trying another download, check whether your device has
-            sufficient storage space. Also confirm that the APK is compatible
-            with your Android version.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            A damaged or incomplete download can also cause installation
-            problems. In that situation, obtain the file again from a legitimate
-            source rather than using a random APK website.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            If Android displays a security warning, read the message carefully.
-            Do not ignore warnings simply to complete an installation.
-          </p>
+
+          <ul className="mt-4 list-disc list-inside space-y-3 marker:text-white text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
+            <li>
+              Sometimes an Android APK may fail to install even when the
+              download appears to have completed successfully.
+            </li>
+            <li>
+              Before trying another download, check whether your device has
+              sufficient storage space. Also confirm that the APK is compatible
+              with your Android version.
+            </li>
+            <li>
+              A damaged or incomplete download can also cause installation
+              problems. In that situation, obtain the file again from a
+              legitimate source rather than using a random APK website.
+            </li>
+            <li>
+              If Android displays a security warning, read the message
+              carefully. Do not ignore warnings simply to complete an
+              installation.
+            </li>
+          </ul>
         </section>
 
         {/* H3: IV7 Latest Version */}
@@ -533,24 +542,27 @@ export default function HomeController() {
           >
             IV7 Latest Version
           </h3>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            When searching for the IV7 latest version, users should avoid
-            relying solely on old blog posts or download pages.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Application versions can change, and an article published several
-            months ago may contain outdated information.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Before installing an updated APK, check the available version
-            number, publication or update information, compatibility details,
-            and source.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Keeping track of the version can also help when troubleshooting an
-            application that suddenly stops working after an Android system
-            update.
-          </p>
+
+          <ul className="mt-4 list-disc list-inside space-y-3 marker:text-white text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
+            <li>
+              When searching for the IV7 latest version, users should avoid
+              relying solely on old blog posts or download pages.
+            </li>
+            <li>
+              Application versions can change, and an article published several
+              months ago may contain outdated information.
+            </li>
+            <li>
+              Before installing an updated APK, check the available version
+              number, publication or update information, compatibility details,
+              and source.
+            </li>
+            <li>
+              Keeping track of the version can also help when troubleshooting an
+              application that suddenly stops working after an Android system
+              update.
+            </li>
+          </ul>
         </section>
 
         {/* H4: Safety and Responsible Use */}
