@@ -15,7 +15,7 @@ import spinWheelRewards from "../public/screenshots/iv7_spin_wheel_topup_rewards
 import vipFreeSpin from "../public/screenshots/iv7_vip_free_spin_200_500_reward.jpeg";
 import welcomeBackBonus from "../public/screenshots/iv7_welcome_back_bonus_610_reward.jpeg";
 
-import { DOWNLOAD_LINKS, FAQ_DATA } from "@/config/constants";
+import { CONCLUSION_DATA, DOWNLOAD_LINKS, FAQ_DATA } from "@/config/constants";
 import HomeSlider from "./view/home.slider";
 
 const SLIDER_IMAGES = [
@@ -27,13 +27,13 @@ const SLIDER_IMAGES = [
 ];
 
 const apkChecklist = [
-  "The name of the developer or publisher",
-  "The source of the APK",
-  "The application's version information",
-  "Android compatibility",
-  "Requested permissions",
-  "Privacy and terms information",
-  "Whether the file has been modified",
+  "Application name and build version",
+  "Trusted and official download source",
+  "Available device internal storage",
+  "Permissions requested by the app",
+  "Original file integrity (unmodified package)",
+  "Compatible Android OS version",
+  "Antivirus or file scan verification",
 ];
 
 const installSteps = [
@@ -106,7 +106,7 @@ export default function HomeController() {
 
           {/* H1 Heading */}
           <h1 className="!my-2 max-w-4xl !text-2xl font-black !leading-[1.2] tracking-tight text-[var(--foreground)] xs:!text-3xl sm:!text-5xl lg:!text-6xl">
-            IV7 Game - APK Download, Register &amp; Login Guide
+            What Is IV7 Game?
           </h1>
 
           {/* App Logo */}
@@ -144,15 +144,6 @@ export default function HomeController() {
               <span>Installation Steps</span>
             </a>
           </div>
-
-          {/* Lead Text */}
-          <p className="lead mt-5 pt-5 max-w-3xl text-xs leading-relaxed text-[var(--muted)] sm:text-base lg:text-lg">
-            Looking for information about IV7 Game? This guide covers the
-            essential details you may want to know before accessing or
-            installing the application, including IV7 APK information, Android
-            installation, registration, login, available game categories, and
-            basic account-safety considerations.
-          </p>
         </div>
       </header>
 
@@ -161,29 +152,28 @@ export default function HomeController() {
         {/* Intro Overview */}
         <section aria-labelledby="overview">
           <p className="text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            With many websites offering APK files and download links, finding
-            the right information can sometimes be confusing. Before installing
-            any application, it is important to verify the source, check the
-            available app information, and make sure the version is suitable for
-            your device and location.
+            IV7 Game is a mobile gaming platform that may provide access to
+            different types of games through a single application or online
+            interface. Depending on the current version and regional
+            availability, the platform may offer various gaming categories and
+            account-related features.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            IV7 Game is an online gaming platform associated with a range of
-            digital card and entertainment-style games. The exact games,
-            features, and availability may vary depending on the current version
-            of the service and the user&apos;s location.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            People searching for IV7 often look for information about
-            downloading the Android application, creating an account, accessing
-            an existing account, and understanding how the platform works. If
-            you are new to the platform, it is worth becoming familiar with the
-            available information before installing an APK or creating an
+            The available games and functions can change as the platform
+            receives updates. For this reason, users should always check the
+            latest information before downloading an application or creating an
             account.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
+            A simple interface and mobile accessibility can make it easier for
+            users to explore available games from compatible smartphones.
+            However, users should understand the platform&apos;s terms,
+            requirements, and applicable rules before using any gaming service.
           </p>
         </section>
 
-        {/* H2: IV7 APK Download for Android */}
+        {/* H2: IV7 Game – Games, APK Download, Registration & Guide
+         */}
         <section
           aria-labelledby="apk-download"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
@@ -192,17 +182,23 @@ export default function HomeController() {
             id="apk-download"
             className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
           >
-            IV7 APK Download for Android
+            IV7 Game – Games, APK Download, Registration & Guide
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Users searching for IV7 APK download are generally looking for an
-            Android installation file. An APK is the package format used by
-            Android to install an application.
+            Welcome to our complete IV7 Game guide. This website provides useful
+            and easy-tounderstand information for people who want to learn more
+            about IV7 Games, the Android application, registration, login,
+            installation, features, and general usage. Our goal is to organize
+            important information in one place so that visitors can better
+            understand the platform before deciding whether to use it.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Before downloading an APK, check the source carefully. An APK found
-            on an unrelated third-party website may not necessarily be the same
-            version provided by the application&apos;s publisher.
+            As mobile gaming continues to grow, users increasingly look for
+            platforms that offer convenient access to different games from their
+            smartphones. IV7 Game is designed around a mobile-focused
+            experience, making it important for users to understand the
+            available application, device compatibility, account process, and
+            other requirements before getting started.
           </p>
 
           {/* Checklist Box */}
@@ -242,7 +238,7 @@ export default function HomeController() {
           <HomeSlider images={SLIDER_IMAGES} />
         </section>
 
-        {/* H2: How to Install IV7 APK on Android */}
+        {/* H2: IV7 Games */}
         <section
           id="installation"
           aria-labelledby="how-to-install"
@@ -252,11 +248,24 @@ export default function HomeController() {
             id="how-to-install"
             className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
           >
-            How to Install IV7 APK on Android
+            IV7 Games
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
-            If you have obtained a legitimate APK from a trusted source, the
-            general Android installation process is straightforward.
+            IV7 Games may include different categories designed for mobile
+            users. The exact selection can vary depending on the current version
+            of the platform. Some users may be interested in card-style games,
+            casual entertainment, or other available gaming options.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+            One advantage of having multiple games within a single platform is
+            convenience. Instead of installing several unrelated applications,
+            users may be able to explore different options from one interface.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+            However, game availability should not be assumed to remain the same
+            permanently. Developers can add, remove, or modify games and
+            features through future updates. Checking the current version and
+            available information is therefore recommended.
           </p>
 
           <div className="mt-6 space-y-3">
@@ -286,7 +295,61 @@ export default function HomeController() {
           </p>
         </section>
 
-        {/* H3: IV7 Game Registration */}
+        {/* H2: How to download IV7 APK Download? */}
+        <section
+          aria-labelledby="apk-download"
+          className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
+        >
+          <h2
+            id="apk-download"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-3xl lg:!text-4xl"
+          >
+            How to download IV7 APK Download?
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
+            Android users searching for IV7 APK should pay close attention to
+            the source of the file. APK files allow Android applications to be
+            installed manually, but downloading an application from an unknown
+            website can create security risks.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
+            Before starting an IV7 Game Download, users should verify that the
+            file is authentic and compatible with their device. It is also
+            important to avoid modified, cracked, or unofficial versions that
+            may contain unwanted software or request unnecessary permissions.
+          </p>
+
+          {/* Checklist Box */}
+          <div className="mt-6 rounded-2xl border border-[var(--border)]/80 bg-gradient-to-b from-[var(--deep)]/70 to-[#0c080b] p-5 sm:p-6">
+            <h3 className="text-base font-bold text-[var(--gold)] sm:text-lg">
+              Before installing an APK, consider the following:
+            </h3>
+            <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
+              {apkChecklist.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[#0d090b] p-3 text-xs text-[var(--foreground)]/90 transition-colors hover:border-[var(--gold)]/40 sm:text-sm"
+                >
+                  <ChevronRight className="h-3.5 w-3.5 shrink-0 text-[var(--gold)]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-5 rounded-2xl border-l-4 border-[var(--red)] bg-gradient-to-r from-[var(--deep)] to-[#0c080b] p-4 shadow-sm sm:p-5">
+            <p className="flex items-start gap-2.5 text-xs font-semibold leading-relaxed text-[#ff3b68] sm:text-sm">
+              <ShieldAlert className="h-4 w-4 shrink-0 text-[var(--red)] mt-0.5" />
+              <span>
+                Avoid downloading modified, cracked, or unofficial APK files
+                simply because they promise additional features or faster
+                access.
+              </span>
+            </p>
+          </div>
+        </section>
+
+        {/* H3:  How to Register IV7 Game? */}
         <section
           aria-labelledby="registration"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
@@ -295,36 +358,35 @@ export default function HomeController() {
             id="registration"
             className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
-            IV7 Game Registration
+            How to Register IV7 Game?
           </h3>
 
           <ul className="mt-4 list-disc list-inside space-y-3 marker:text-white text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
             <li>
-              New users may also search for IV7 Game Register when trying to
-              create an account.
+              Users who want to access account-based features may need to
+              complete an IV7 Game Register process. Registration requirements
+              can vary depending on the current version and region.
             </li>
             <li>
-              The registration process can vary depending on the current version
-              of the service. Generally, users should follow the registration
-              instructions provided through the legitimate application or
-              website.
+              Typically, a registration process may require users to enter basic
+              information, create login credentials, and complete any
+              verification requested by the platform.
             </li>
             <li>
-              When creating an account, always enter accurate information and
-              avoid sharing passwords, verification codes, or other sensitive
-              account information with unknown individuals.
+              When creating an account, always use secure credentials and avoid
+              sharing your password, OTP, PIN, or other confidential information
+              with another person. If a website or individual requests sensitive
+              information unnecessarily, users should exercise caution.
             </li>
             <li>
-              If you experience a registration problem, check that the
-              information entered is correct and that your internet connection
-              is stable. For account-specific problems, use the platform&apos;s
-              available support channel rather than relying on unofficial
-              contacts.
+              After completing registration, users can normally use the login
+              option to access their account, subject to the platform&apos;s
+              current requirements.
             </li>
           </ul>
         </section>
 
-        {/* H3: IV7 Games Login Guide */}
+        {/* H3: How to Logion IV7 Games? */}
         <section
           aria-labelledby="login-guide"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
@@ -333,16 +395,23 @@ export default function HomeController() {
             id="login-guide"
             className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
-            IV7 Games Login Guide
+            How to Logion IV7 Games?
           </h3>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Already have an account? The IV7 Login process normally requires the
-            credentials associated with your account.
+            After registration, returning users may be able to access their
+            accounts through an IV7 Game Login option. Users should enter their
+            credentials carefully and make sure they are using the correct
+            website or application.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Open the legitimate application or access point and use the
-            appropriate login option. Enter your registered information
-            carefully and avoid saving credentials on shared or public devices.
+            If you forget your password, use the platform&lsquo;s legitimate
+            account-recovery process rather than relying on third-party
+            services. Never provide account credentials to people who claim they
+            can recover or unlock an account for you.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
+            For better account security, choose a strong and unique password and
+            keep your login details private.
           </p>
 
           <div className="mt-6 rounded-2xl border border-[var(--border)] bg-[#0d090c] p-5">
@@ -433,7 +502,8 @@ export default function HomeController() {
           </div>
         </section>
 
-        {/* H3: IV7 APK Not Installing? Try These Checks */}
+        {/* H3: How to Install IV7 APK Game?
+         */}
         <section
           aria-labelledby="troubleshooting"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
@@ -442,33 +512,38 @@ export default function HomeController() {
             id="troubleshooting"
             className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
-            IV7 APK Not Installing? Try These Checks
+            How to Install IV7 APK Game?
           </h3>
 
           <ul className="mt-4 list-disc list-inside space-y-3 marker:text-white text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
             <li>
-              Sometimes an Android APK may fail to install even when the
-              download appears to have completed successfully.
+              If a legitimate Android version is available, installing an APK
+              generally involves a few simple steps. First, download the
+              appropriate application file from a trusted source. After the
+              download is complete, locate the file in your device&apos;s
+              Downloads or Files folder.
             </li>
             <li>
-              Before trying another download, check whether your device has
-              sufficient storage space. Also confirm that the APK is compatible
-              with your Android version.
+              Open the APK and follow the installation instructions displayed by
+              Android. Depending on your device and Android version, you may
+              need to review security settings before installing an application
+              obtained outside the Google Play Store.
             </li>
             <li>
-              A damaged or incomplete download can also cause installation
-              problems. In that situation, obtain the file again from a
-              legitimate source rather than using a random APK website.
+              After installation, open the application and check whether it
+              works correctly on your device. If you experience problems,
+              confirm that the APK is compatible with your Android version and
+              that sufficient storage is available.
             </li>
             <li>
-              If Android displays a security warning, read the message
-              carefully. Do not ignore warnings simply to complete an
-              installation.
+              Do not install files simply because they claim to be newer or
+              offer additional features. Unofficial modified versions can
+              present additional security concerns.
             </li>
           </ul>
         </section>
 
-        {/* H3: IV7 Latest Version */}
+        {/* H3: IV7 Game on Android */}
         <section
           aria-labelledby="latest-version"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
@@ -477,32 +552,32 @@ export default function HomeController() {
             id="latest-version"
             className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
-            IV7 Latest Version
+            IV7 Game on Android
           </h3>
 
           <ul className="mt-4 list-disc list-inside space-y-3 marker:text-white text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
             <li>
-              When searching for the IV7 latest version, users should avoid
-              relying solely on old blog posts or download pages.
+              Mobile compatibility is an important consideration for anyone
+              interested in IV7 Game. Before installing the application, users
+              should check whether their smartphone meets the required Android
+              version and storage requirements.
             </li>
             <li>
-              Application versions can change, and an article published several
-              months ago may contain outdated information.
+              Keeping your device updated can also improve security and
+              compatibility. If the application does not install or operate
+              properly, check the application&apos;s requirements and download
+              source before attempting to install another version.
             </li>
             <li>
-              Before installing an updated APK, check the available version
-              number, publication or update information, compatibility details,
-              and source.
-            </li>
-            <li>
-              Keeping track of the version can also help when troubleshooting an
-              application that suddenly stops working after an Android system
-              update.
+              Avoid downloading multiple APK files from random websites simply
+              because the first installation did not work. This can increase the
+              risk of installing an unsafe or altered application.
             </li>
           </ul>
         </section>
 
-        {/* H4: Safety and Responsible Use */}
+        {/* H4:  Features of IV7 Game
+         */}
         <section
           aria-labelledby="safety-responsible"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
@@ -511,37 +586,55 @@ export default function HomeController() {
             id="safety-responsible"
             className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
           >
-            Safety and Responsible Use
+            Features of IV7 Game
           </h4>
           <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Online gaming services can involve different features depending on
-            the platform and location. Where money or financial transactions are
-            involved, users should understand the applicable rules and risks
-            before participating.
+            The exact features of IV7 can change over time. Depending on the
+            current application version, users may find features such as:
+          </p>
+          <ul className="mt-4 list-disc list-inside space-y-3 marker:text-white text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
+            <li>Mobile-friendly gaming access</li>
+            <li>Multiple gaming options</li>
+            <li>User registration and login</li>
+            <li>Simple navigation</li>
+            <li>Account management</li>
+            <li>Application updates</li>
+            <li>Compatibility with supported Android devices</li>
+          </ul>
+        </section>
+        {/* H4: Responsible Gaming and Safety*/}
+        <section
+          aria-labelledby="safety-responsible"
+          className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
+        >
+          <h4
+            id="safety-responsible"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
+          >
+            Responsible Gaming and Safety
+          </h4>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
+            Safety should always be a priority when using any online gaming
+            platform. Users should download applications only from reliable
+            sources and carefully review the permissions requested during
+            installation.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Do not assume that a website&apos;s claims about winnings, bonuses,
-            withdrawals, security, or legality are automatically accurate.
+            If a platform offers games involving money or financial
+            transactions, users should understand the associated risks before
+            participating. Availability and legality can differ depending on the
+            user&apos;s location, so users are responsible for checking the laws
+            and regulations applicable to them.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            Users should independently verify important claims and check the
-            current regulations applicable to their location.
+            Gaming should be treated as entertainment rather than a guaranteed
+            method of earning money. Never spend more than you can afford to
+            lose, and avoid chasing losses.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base sm:leading-loose">
-            For anyone under the applicable legal age, such services should not
-            be used.
+            Users should also follow applicable age requirements and platform
+            rules.
           </p>
-
-          <div className="mt-5 rounded-2xl border border-[var(--red)]/40 bg-gradient-to-r from-[var(--deep)] to-[#0e070c] p-4 sm:p-5">
-            <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[var(--gold)] sm:text-sm">
-              <AlertTriangle className="h-3.5 w-3.5 text-[var(--gold)]" />
-              <span>Important note</span>
-            </p>
-            <p className="mt-1.5 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
-              Verify local compliance, age criteria, and understand financial
-              risks prior to engaging with real-money services.
-            </p>
-          </div>
         </section>
 
         {/* H4: Final Thoughts */}
@@ -577,7 +670,31 @@ export default function HomeController() {
           </p>
         </section>
 
-        {/* H3: Frequently Asked Questions */}
+        {/* H3:  Conclusion */}
+        <section
+          aria-labelledby="faq"
+          className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"
+        >
+          <h3
+            id="faq"
+            className="!text-xl font-bold text-[var(--foreground)] sm:!text-2xl lg:!text-3xl"
+          >
+            Conclusion
+          </h3>
+          <div className="mt-6 space-y-3">
+            {CONCLUSION_DATA.paragraphs.map((p, idx) => (
+              <div
+                key={idx}
+                className="rounded-2xl border border-[var(--border)]/70 bg-gradient-to-b from-[var(--deep)]/50 to-[#0d090b] p-4 transition-all duration-200 hover:border-[var(--border)] sm:p-5"
+              >
+                <p className="mt-1.5 text-xs leading-relaxed text-[var(--muted)] sm:text-sm">
+                  {p}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+        {/* H3:  Frequently Asked Questions */}
         <section
           aria-labelledby="faq"
           className="mt-12 border-t border-[var(--border)] pt-8 sm:mt-16 sm:pt-12"

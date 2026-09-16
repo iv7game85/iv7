@@ -273,39 +273,37 @@ export const FAQ_DATA: FAQItem[] = [
   {
     category: "General",
     q: "What is IV7 Game?",
-    a: "IV7 Game is a mobile-focused gaming platform that brings different types of games and account features together in one place.",
+    a: "IV7 Game is a mobile-oriented gaming platform that may provide users with access to different games and account-based features.",
   },
   {
-    category: "Account & APK",
-    q: "What are IV7 Games?",
-    a: "IV7 Games refers to the range of games available through the IV7 platform. The selection may include different card, casual, prediction-style, and other gaming formats depending on the current version.",
+    category: "Download & APK",
+    q: "How can I download IV7 APK?",
+    a: "If an official or legitimate APK is available, download it from a trusted source and verify that it is compatible with your Android device before installation.",
   },
   {
-    category: "Account & APK",
-    q: "How can I complete IV7 Games Download?",
-    a: "If an official Android APK is available, obtain it from the legitimate IV7 source and follow the Android installation instructions. Always verify the APK before installing it.",
+    category: "Account & Access",
+    q: "How do I register for IV7 Game?",
+    a: "Users can generally look for the Register or Sign Up option and provide the information requested by the platform. Registration requirements may change.",
   },
   {
-    category: "Account & APK",
-    q: "How does IV7 Game Register work?",
-    a: "New users can generally select the Register or Sign Up option and provide the information requested by the platform. Verification may be required before an account can be used.",
+    category: "Compatibility",
+    q: "Is IV7 Game available on Android?",
+    a: "The platform is focused on mobile access, but Android compatibility can depend on the current application version, device, and region.",
   },
   {
-    category: "Account & APK",
-    q: "Is IV7 available on Android?",
-    a: "IV7 is presented as a mobile-focused platform, and an Android APK may be available depending on the current release. Check the current system requirements before installation.",
-  },
-  {
-    category: "General",
-    q: "Is an IV7 APK safe?",
-    a: "Safety depends on the authenticity of the APK and where it was downloaded. Avoid unofficial modified files and verify the source before installing an application.",
-  },
-  {
-    category: "Legality & Rules",
-    q: "Can I play every IV7 game on every device?",
-    a: "Not necessarily. Game availability and compatibility can depend on the current application version, device, operating system, and region.",
+    category: "Security & Safety",
+    q: "Is the IV7 APK safe?",
+    a: "The safety of an APK depends largely on its authenticity and source. Avoid modified or suspicious files and verify an application before installing it.",
   },
 ];
+
+export const CONCLUSION_DATA = {
+  title: "Conclusion",
+  paragraphs: [
+    "IV7 Game offers a mobile-focused way to explore different gaming options through a convenient platform. Whether you are researching IV7 Games, looking for information about an IV7 APK, learning about the download process, or trying to understand registration and login, it is important to verify the latest information before using the service.",
+    "Always prioritize account security, download applications from trusted sources, review permissions carefully, and follow the laws and age requirements applicable in your region. By taking these precautions, users can make more informed decisions about mobile gaming and the applications they choose to use.",
+  ],
+};
 
 /* ---------------------------------------------------------
    BLOG POSTS
