@@ -5,95 +5,25 @@ import {
   ExternalLink,
   HelpCircle,
   ShieldAlert,
-  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import inviteFriendsEarn from "../public/screenshots/iv7_invite_friends_earn_100_rebate.jpeg";
+import paytmQrBonus from "../public/screenshots/iv7_paytm_qr_7_percent_bonus_offer.jpeg";
+import spinWheelRewards from "../public/screenshots/iv7_spin_wheel_topup_rewards_100k.jpeg";
+import vipFreeSpin from "../public/screenshots/iv7_vip_free_spin_200_500_reward.jpeg";
+import welcomeBackBonus from "../public/screenshots/iv7_welcome_back_bonus_610_reward.jpeg";
 
 import { DOWNLOAD_LINKS, FAQ_DATA } from "@/config/constants";
+import HomeSlider from "./view/home.slider";
 
-const gameCategories = [
-  [
-    "Card Games",
-    "Card-based games are popular among mobile gaming users because they are familiar and easy to understand. Depending on availability, IV7 may provide games based on traditional card formats and other digital variations.",
-  ],
-  [
-    "Teen Patti",
-    "Teen Patti is a well-known card game with a strong following among Indian players. Digital versions allow users to experience the familiar card format through a mobile interface.",
-  ],
-  [
-    "Dragon Tiger",
-    "Dragon Tiger is another card-based game that may be available on gaming platforms such as IV7. Users should understand the rules of each game before participating.",
-  ],
-  [
-    "Slots and Casual Games",
-    "Some versions or sections of the platform may include slot-style and casual games designed for short gaming sessions.",
-  ],
-  [
-    "Prediction-Style Games",
-    "Prediction-based games may also be available depending on the current platform and region. These games can involve chance, so users should understand the rules and risks before participating.",
-  ],
-];
-
-const downloadSteps = [
-  [
-    "Visit the Official Source",
-    "Start by visiting the legitimate IV7 website or authorized download page. Check the application name, version information, and source before downloading.",
-  ],
-  [
-    "Download the APK",
-    "Select the appropriate Android download option and allow the file to finish downloading. Make sure your phone has sufficient storage and a stable internet connection.",
-  ],
-  [
-    "Find the Downloaded File",
-    "Open the Files or Downloads application on your Android device and locate the APK.",
-  ],
-  [
-    "Check Android Security Settings",
-    "Android may restrict installations from sources outside Google Play. Only continue after verifying that the APK is legitimate.",
-  ],
-  [
-    "Install IV7",
-    "Open the APK and follow the installation instructions displayed on your screen. Review the requested permissions before completing the installation.",
-  ],
-  [
-    "Open the Application",
-    "After installation, open IV7 and follow the platform's current login or registration instructions.",
-  ],
-];
-
-const registerSteps = [
-  "Open the IV7 platform or application.",
-  "Select the Register or Sign Up option.",
-  "Enter the requested mobile number or account details.",
-  "Complete the verification process if required.",
-  "Create a strong password.",
-  "Review the platform's terms and conditions.",
-  "Complete registration and log in.",
-];
-
-const featureDetails = [
-  [
-    "Multiple Gaming Options",
-    "Different categories in one platform allow users to explore various games without needing separate applications for every type.",
-  ],
-  [
-    "Mobile-Friendly Design",
-    "IV7 is designed around smartphone access, making it convenient for users who prefer gaming on Android devices.",
-  ],
-  [
-    "Simple Navigation",
-    "A clear interface can make it easier to find games, account settings, registration options, and other sections.",
-  ],
-  [
-    "Account Management",
-    "Registered users can access account-related features through their login details.",
-  ],
-  [
-    "Regular Updates",
-    "Application updates can improve compatibility, fix technical issues, and introduce changes to available features.",
-  ],
+const SLIDER_IMAGES = [
+  welcomeBackBonus,
+  vipFreeSpin,
+  spinWheelRewards,
+  paytmQrBonus,
+  inviteFriendsEarn,
 ];
 
 const apkChecklist = [
@@ -303,6 +233,13 @@ export default function HomeController() {
               </span>
             </p>
           </div>
+        </section>
+
+        <section className="py-4">
+          <h2 className="text-center text-xl font-bold mb-8 uppercase tracking-widest text-accent">
+            App Screenshots
+          </h2>
+          <HomeSlider images={SLIDER_IMAGES} />
         </section>
 
         {/* H2: How to Install IV7 APK on Android */}
