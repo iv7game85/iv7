@@ -12,7 +12,7 @@ if (!loadedArticle) {
 const article = loadedArticle;
 
 export const metadata: Metadata = {
-  title: article.metaTitle,
+  title: { absolute: article.metaTitle },
   description: article.metaDescription,
   alternates: {
     canonical: article.canonicalUrl,
@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     url: article.canonicalUrl,
     type: "article",
     publishedTime: article.publishDate,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: article.metaTitle,
+    description: article.metaDescription,
   },
 };
 
